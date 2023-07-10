@@ -25,4 +25,10 @@ i span {
 
 h3 {
   font-size: 1.8em;
-}/*# sourceMappingURL=index.css.map */
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.27) !important;
+}
+
+/*# sourceMappingURL=albumPage.css.map */
