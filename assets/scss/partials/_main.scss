@@ -1,0 +1,59 @@
+ @media screen and (min-width:678px){
+    main{
+        background: rgba(36,35,36,1);
+background: -moz-linear-gradient(top, rgba(36,35,36,1) 0%, rgba(3,3,3,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(36,35,36,1)), color-stop(100%, rgba(3,3,3,1)));
+background: -webkit-linear-gradient(top, rgba(36,35,36,1) 0%, rgba(3,3,3,1) 100%);
+background: -o-linear-gradient(top, rgba(36,35,36,1) 0%, rgba(3,3,3,1) 100%);
+background: -ms-linear-gradient(top, rgba(36,35,36,1) 0%, rgba(3,3,3,1) 100%);
+background: linear-gradient(to bottom, rgba(36,35,36,1) 0%, rgba(3,3,3,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242324', endColorstr='#030303', GradientType=0 );
+
+
+        
+    }
+
+    .bgViola{
+        background: rgba(36,35,36,1);
+        background: -moz-linear-gradient(top, rgba(36,35,36,1) 0%, rgba(10,9,10,1) 27%, rgba(10,10,10,1) 38%, rgba(0,0,0,1) 56%, rgba(3,3,3,1) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(36,35,36,1)), color-stop(27%, rgba(10,9,10,1)), color-stop(38%, rgba(10,10,10,1)), color-stop(56%, rgba(0,0,0,1)), color-stop(100%, rgba(3,3,3,1)));
+        background: -webkit-linear-gradient(top, rgba(36,35,36,1) 0%, rgba(10,9,10,1) 27%, rgba(10,10,10,1) 38%, rgba(0,0,0,1) 56%, rgba(3,3,3,1) 100%);
+        background: -o-linear-gradient(top, rgba(36,35,36,1) 0%, rgba(10,9,10,1) 27%, rgba(10,10,10,1) 38%, rgba(0,0,0,1) 56%, rgba(3,3,3,1) 100%);
+        background: -ms-linear-gradient(top, rgba(36,35,36,1) 0%, rgba(10,9,10,1) 27%, rgba(10,10,10,1) 38%, rgba(0,0,0,1) 56%, rgba(3,3,3,1) 100%);
+        background: linear-gradient(to bottom, rgba(36,35,36,1) 0%, rgba(10,9,10,1) 27%, rgba(10,10,10,1) 38%, rgba(0,0,0,1) 56%, rgba(3,3,3,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242324', endColorstr='#030303', GradientType=0 );
+        
+        
+
+    }
+
+    
+
+  .bgi{
+    background-color: #2A2A2A!important;
+  }
+
+  .hiddenb{
+    font-size: 0.6rem;
+  }
+  
+  
+  .btprofile{
+    background-color: black;
+  }
+
+  button img{
+    width: 2em;
+  }
+   
+ }
+
+ .card-music{
+  background-color:  rgb(66,66,70);
+  background: linear-gradient(90deg, rgba(66,66,70,1) 0%, rgba(73,73,73,1) 45%, rgba(175,177,177,1) 100%);;
+ }
+ .radiu{
+  border-radius: 20px;
+ }
+
+
