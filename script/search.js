@@ -2,7 +2,6 @@ const searchGenerator = function (URL) {
   fetch(URL)
     .then((res) => {
       if (res.ok) {
-        console.log(res);
         return res.json();
       } else {
         throw new Error("errore");
@@ -21,7 +20,7 @@ const searchGenerator = function (URL) {
           "justify-content-center"
         );
         col.innerHTML = `<div class="card w-100">
-   <img src=${element.album.cover_medium} class="card-img-top " alt="...">
+   <img src=${element.album.cover_medium} class="card-img-top" alt="${element.title}">
    <div class="card-body d-flex flex-column justify-content-between">
      <h5 class="card-title">${element.title} </h5>
     <audio class="w-100"
@@ -36,6 +35,15 @@ const searchGenerator = function (URL) {
  </div>    `;
 
         riga.appendChild(col);
+      });
+      const allImgCards = document.querySelectorAll(".card-img-top");
+      allImgCards.forEach((img) => {
+        let context = draw(img);
+        let allColors = getColors(context);
+        console.log(allColors);
+        // let mostRecurrent = findMostRecurrentColor(allColors);
+        // let mostRecurrentHex = pad(mostRecurrent);
+        // console.log(mostRecurrentHex);
       });
     })
     .catch((err) => console.log(err));
