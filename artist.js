@@ -1,24 +1,37 @@
-const URL=`https://striveschool-api.herokuapp.com/api/deezer/artist/${}`
+const URL='https://striveschool-api.herokuapp.com/api/deezer/artist/'
+let id=412
 
-const indirizzo= new URLSearchParams(location.search)
-const eventid= indirizzo.get('id')
-console.log(URL+eventid)
+//const indirizzo= new URLSearchParams(location.search)
+//const numeroid= indirizzo.get('id')
+//console.log(URL+numeroid)
 
 
 
 
 const ricerca=function(){
-    fetch(URL+eventid)
+  
+    fetch(URL+id)
+    
     .then((res)=>{
+     
      if(res.ok){
          return res.json()
      }else{
          throw new Error ('errore')
      }
     })
-    .then((artist)=>{
-     
- 
+    .then((data)=>{
+        console.log(data)
+
+      let nome=  document.getElementById("nome")
+    nome.innerText = `${data.name}`
+    let immagine=document.getElementById('album-cover')
+    immagine.setAttribute("src", `${data.picture_medium
+    }`)
+  
+    })
+    .catch((err)=>{
+        console.log(err)
     })
 
     
