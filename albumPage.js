@@ -45,8 +45,9 @@ const getAlbum = function () {
         newRow.classList.add(
           "row",
           "row-cols-3",
-          "border-bottom",
-          "justify-content-between"
+          "py-2",
+          "justify-content-between",
+          "align-items-center"
         )
         newRow.innerHTML = `
 
