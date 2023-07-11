@@ -33,8 +33,8 @@ const getAlbum = function () {
                     />  
                     ${data.artist.name} </p> 
                     </div>
-                    <p class="m-0 d-none d-lg-flex">&nbsp; · ${year} · ${data.nb_tracks} brani, ${minutes} min ${seconds} sec.</p>
-                    <p class="m-0 d-lg-flex">album · ${year}</p>
+                    <p class="m-0 d-none d-lg-flex">&nbsp; · ${year} · ${data.nb_tracks} brani, ${minutes} min ${seconds} sec. &nbsp;</p>
+                    <p class="m-0 d-lg-none">album · ${year}</p>
                     `
       const tracks = data.tracks.data
       tracks.forEach((element, i) => {
