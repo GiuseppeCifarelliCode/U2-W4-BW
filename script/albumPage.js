@@ -120,3 +120,7 @@ document.getElementById("heart").addEventListener("click", function () {
   document.getElementById("heart").classList.toggle("bi-heart")
   document.getElementById("heart").classList.toggle("bi-heart-fill")
 })
+document.getElementById("close").addEventListener("click", function () {
+  document.getElementById("footer").classList.add("d-lg-none")
+  document.querySelector("main").classList.add("flex-grow-1")
+})
