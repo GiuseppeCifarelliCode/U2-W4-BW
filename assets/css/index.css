@@ -43,6 +43,10 @@ h3 {
   .bgi {
     background-color: #2A2A2A !important;
   }
+  .al {
+    border-top-right-radius: 20px;
+    border-color: green !important;
+  }
   .hiddenb {
     font-size: 0.6rem;
   }
@@ -51,6 +55,16 @@ h3 {
   }
   button img {
     width: 2em;
+  }
+  .colonna:hover {
+    transform: scale(1.2);
+    z-index: 1;
+    font-style: italic;
+    color: green !important;
+  }
+  .mh:hover {
+    background: rgb(66, 66, 70);
+    background: linear-gradient(90deg, rgb(66, 66, 70) 0%, rgb(73, 73, 73) 0%, rgb(175, 177, 177) 100%);
   }
 }
 .card-music {

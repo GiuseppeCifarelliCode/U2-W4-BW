@@ -31,6 +31,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242324', end
 
   .bgi{
     background-color: #2A2A2A!important;
+    
+  }
+
+  .al{
+    border-top-right-radius: 20px;
+    border-color:green!important;
   }
 
   .hiddenb{
@@ -45,6 +51,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242324', end
   button img{
     width: 2em;
   }
+
+  .colonna:hover{
+    transform:scale(1.2); 
+    z-index: 1;
+    font-style:italic;
+    color: green!important;
+    
+  }
+  
+  .mh:hover{
+    background: rgb(66,66,70);
+  background: linear-gradient(90deg, rgba(66,66,70,1) 0%, rgba(73,73,73,1) 0%, rgba(175,177,177,1) 100%);
+  
+  }
+  
    
  }
 
