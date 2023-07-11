@@ -36,7 +36,6 @@ const getAlbum = function () {
                     <p class="m-0 d-none d-lg-flex">&nbsp; · ${year} · ${data.nb_tracks} brani, ${minutes} min ${seconds} sec. &nbsp;</p>
                     <p class="m-0 d-lg-none">album · ${year}</p>
                     `
-
       const tracks = data.tracks.data
       tracks.forEach((element, i) => {
         let time = element.duration
