@@ -81,6 +81,7 @@ const getAlbum = function () {
       let songRow = document.getElementsByClassName("song-row")
       for (let i = 0; i < songRow.length; i++) {
         songRow[i].addEventListener("click", function () {
+          refreshPlayer()
           audioPlay(playerList, i)
         })
       }
@@ -105,14 +106,17 @@ aTag.id = "play"
 aTag.controls = true
 aTag.autoplay = true
 aTag.classList.add("d-none")
+let sMP3 = document.createElement("source")
+sMP3.classList.add("source-mp3")
+aTag.appendChild(sMP3)
 document.getElementById("top").appendChild(aTag)
+const refreshPlayer = function (src) {
+  sMP3.src = ""
+}
 const audioPlay = function (arr, i) {
-  let sMP3 = document.createElement("source")
-  sMP3.classList.add("source-mp3")
   sMP3.src = arr[i]
   sMP3.type = "audio/mp3"
   aTag.classList.remove("d-none")
-  aTag.appendChild(sMP3)
 
   document.querySelector("nav").appendChild(aTag)
 }
