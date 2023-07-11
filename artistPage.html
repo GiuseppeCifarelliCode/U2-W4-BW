@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Album Page</title>
+    <title>Artist Page</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/albumPage.css" />
+    <link rel="stylesheet" href="./assets/css/artistPage.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
@@ -23,7 +23,7 @@
           <nav class="d-flex justify-content-evenly fixed-bottom mb-3 mb-md-0">
             <i class="bi bi-three-dots d-none d-md-block my-md-2"></i>
             <i
-              class="bi bi-house-door-fill my-md-2 d-md-inline d-flex flex-column align-items-center"
+              class="bi bi-house-door-fill my-md-2 d-md-inline d-flex flex-md-column align-items-center "
               ><span class="d-block d-md-inline ms-md-3">Home</span></i
             >
             <i
@@ -38,7 +38,7 @@
             >
           </nav>
           <div
-            class="d-flex justify-content-between flex-md-column align-items-center d-md-none"
+            class="d-flex justify-content-between flex-md-column align-items-center d-none "
           >
             <div><h3>Buonasera</h3></div>
             <div class="d-flex justify-content-evenly">
@@ -53,8 +53,9 @@
               <i class="bi bi-gear"></i>
             </div>
           </div>
+        </div>
         </header>
-        <main class="col col-12 col-md-7 bg-warning">
+        <main class="col col-12 col-md-7 bg-black text-white">
           <div class="row row-cols-1 row-cols-lg-2">
             <div class="col d-flex flex-column flex-md-row">
               <div class="text-center">
@@ -66,40 +67,52 @@
                 />
               </div>
               <div class="flex-md-grow-1">
-                <p class="m-0 h2">Album Title</p>
+                <p class="m-0 h2">Name Artist</p>
                 <div class="">
-                  <p class="m-0 d-md-inline">Artist name</p>
-                  <p class="m-0 d-md-inline">Album · <span>year</span></p>
+                  <p class="m-0 d-md-inline">3.961.093 ascoltatori mensili</p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row mt-2 bg-secondary">
+          <div class="row mt-2 bg-black">
             <div class="col d-flex align-items-center gap-3 my-2">
               <div class="bg-success rounded-circle d-none d-md-flex">
                 <i class="bi bi-play-fill"></i>
               </div>
-              <div class=""><i class="bi bi-heart"></i></div>
-              <div class=""><i class="bi bi-arrow-down-circle"></i></div>
+              <button type="button" class="btn btn-dark">Seguiti</button>
+
               <div class="">
                 <i class="bi bi-three-dots d-none d-md-flex"></i>
               </div>
               <div class="">
-                <i class="bi bi-three-dots-vertical d-md-none"></i>
+                <i class="bi bi-three-dots-vertical d-md-none rounded-1"></i>
               </div>
             </div>
             <div class="col-2 d-flex d-md-none gap-2">
               <div><i class="bi bi-shuffle"></i></div>
-              <div class="bg-success rounded-circle">
+              <div class="bg-success rounded-circle p-3 text-light">
                 <i class="bi bi-play-fill"></i>
               </div>
             </div>
           </div>
+          <h4 class="mt-4 text-white">Popolari</h4>
+          <div class="icona d-flex">
+            <img
+              class="pt-3 rounded-circle mb-4"
+              src="assets/imgs/main/image-11.jpg"
+              alt="img"
+              style="width: 64px"
+            />
+
+            <p class="d-flex column mt-4 mx-4">
+              Brani che ti piaccioni <br />8 Brani
+            </p>
+          </div>
           <div class="row">
             <div
               class="col-12 border-bottom d-flex justify-content-between justify-content-lg-evenly align-items-center px-3 gap-4"
             >
-              <div class="d-none d-lg-flex">1</div>
+              <div class="number">1</div>
               <div class="flex-grow-1">
                 <p class="m-0">Song Title</p>
                 <p class="m-0">Artist name</p>
@@ -117,7 +130,7 @@
             <div
               class="col-12 border-bottom d-flex justify-content-between justify-content-lg-evenly align-items-center px-3 gap-4"
             >
-              <div class="d-none d-lg-flex">1</div>
+              <div class="number">2</div>
               <div class="flex-grow-1">
                 <p class="m-0">Song Title</p>
                 <p class="m-0">Artist name</p>
@@ -135,7 +148,7 @@
             <div
               class="col-12 border-bottom d-flex justify-content-between justify-content-lg-evenly align-items-center px-3 gap-4"
             >
-              <div class="d-none d-lg-flex">1</div>
+              <div class="number">3</div>
               <div class="flex-grow-1">
                 <p class="m-0">Song Title</p>
                 <p class="m-0">Artist name</p>
@@ -153,7 +166,7 @@
             <div
               class="col-12 border-bottom d-flex justify-content-between justify-content-lg-evenly align-items-center px-3 gap-4"
             >
-              <div class="d-none d-lg-flex">1</div>
+              <div class="number">4</div>
               <div class="flex-grow-1">
                 <p class="m-0">Song Title</p>
                 <p class="m-0">Artist name</p>
@@ -171,7 +184,7 @@
             <div
               class="col-12 border-bottom d-flex justify-content-between justify-content-lg-evenly align-items-center px-3 gap-4"
             >
-              <div class="d-none d-lg-flex">1</div>
+              <div class="number">5</div>
               <div class="flex-grow-1">
                 <p class="m-0">Song Title</p>
                 <p class="m-0">Artist name</p>
@@ -186,7 +199,7 @@
             </div>
           </div>
         </main>
-        <footer class="col col-12 col-md-2 bg-white">FOOTER</footer>
+        <footer class="col col-12 col-md-2 bg-black"></footer>
       </div>
     </div>
     <script
