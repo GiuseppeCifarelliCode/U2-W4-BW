@@ -10,6 +10,7 @@ const searchGenerator = function (URL) {
     })
     .then((data) => {
       let newdata = data.data;
+      console.log(data);
       newdata.forEach((element) => {
         let riga = document.getElementById("riga");
         let col = document.createElement("div");
@@ -19,7 +20,14 @@ const searchGenerator = function (URL) {
    <div class="card-body d">
      <h5 class="card-title">${element.title} </h5>
      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-     <a href="#" class="btn btn-primary">Go somewhere</a>
+    <audio
+        controls
+        src="${data.link}">
+            <a href="/media/cc0-audio/t-rex-roar.mp3">
+                Download audio
+            </a>
+    </audio>
+</figure>
    </div>
  </div>    `;
 
