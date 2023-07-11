@@ -32,7 +32,7 @@ nav {
 }
 
 .play {
-  background-color: #1FDF64;
+  background-color: #1fdf64;
   border-radius: 50%;
   width: 45px;
   height: 45px;
@@ -46,4 +46,8 @@ nav {
 
 .bi-clock {
   font-size: 1em;
+}
+
+i:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=albumPage.css.map */
