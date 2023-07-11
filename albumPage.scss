@@ -40,3 +40,14 @@ i:hover {
   border-bottom: 1px solid white;
   cursor: pointer;
 }
+#playlist {
+  ul {
+    padding: 0;
+    list-style: none;
+    li {
+      margin-top: 0.5em;
+    }
+  }
+  overflow-y: scroll;
+  max-height: 80vh;
+}
