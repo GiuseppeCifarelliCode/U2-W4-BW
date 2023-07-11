@@ -23,13 +23,18 @@ const getAlbum = function () {
       const hours = Math.floor(time / 3600)
       time = time - hours * 3600
       document.getElementById("album-info").innerHTML = ` 
+                      <div>
+                      <p class="m-0">
                       <img
                       src=${data.artist.picture_small}
                       alt="artist pic"
                       class="rounded-circle"
                       width="25px"
                     />  
-                    ${data.artist.name}  · ${year} · ${data.nb_tracks} brani, ${minutes} min ${seconds} sec.
+                    ${data.artist.name} </p> 
+                    </div>
+                    <p class="m-0 d-none d-lg-flex">&nbsp; · ${year} · ${data.nb_tracks} brani, ${minutes} min ${seconds} sec.</p>
+                    <p class="m-0 d-lg-flex">album · ${year}</p>
                     `
       const tracks = data.tracks.data
       tracks.forEach((element, i) => {
