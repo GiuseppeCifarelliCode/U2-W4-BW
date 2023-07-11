@@ -1,23 +1,26 @@
-@import "assets/scss/partials/variables", "assets/scss/partials/color", "assets/scss/partials/header", "assets/scss/partials/main", "assets/scss/partials/footer";
+@import "assets/scss/partials/variables", "assets/scss/partials/color",
+  "assets/scss/partials/header", "assets/scss/partials/main",
+  "assets/scss/partials/footer";
 
 nav {
-  background-color : rgba(0, 0, 0, 0.45);
-  }
+  background-color: rgba(0, 0, 0, 0.45);
+}
 
 .play {
-  background-color : #1FDF64;
-  border-radius    : 50%;
-  width            : 45px;
-  height           : 45px;
-  }
+  background-color: #1fdf64;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+}
 
 .album-title {
-  @media screen and (min-width : 768px) {
-    font-size : 5em;
-    }
+  @media screen and (min-width: 768px) {
+    font-size: 5em;
   }
-.bi-clock{
+}
+.bi-clock {
   font-size: 1em;
-  }
-
-
+}
+i:hover {
+  cursor: pointer;
+}
