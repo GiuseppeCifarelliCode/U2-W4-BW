@@ -52,7 +52,8 @@ const getAlbum = function () {
           "row-cols-3",
           "py-2",
           "justify-content-between",
-          "align-items-center"
+          "align-items-center",
+          "song-row"
         )
         newRow.innerHTML = `
 
@@ -79,3 +80,8 @@ const getAlbum = function () {
     })
 }
 getAlbum()
+document
+  .getElementsByClassName("chevron")[0]
+  .addEventListener("click", function () {
+    window.location.href = "./index.html"
+  })

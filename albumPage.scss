@@ -10,11 +10,12 @@ nav {
   border-radius: 50%;
   width: 45px;
   height: 45px;
+  padding: 1.5em;
 }
 
 .album-title {
   @media screen and (min-width: 768px) {
-    font-size: 5em;
+    font-size: 3.5em;
   }
 }
 .bi-clock {
@@ -33,4 +34,20 @@ i:hover {
   width: 35px;
   height: 35px;
   padding: 0.1%;
+}
+.song-row:hover {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+}
+#playlist {
+  ul {
+    padding: 0;
+    list-style: none;
+    li {
+      margin-top: 0.5em;
+    }
+  }
+  overflow-y: scroll;
+  max-height: 80vh;
 }

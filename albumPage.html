@@ -21,7 +21,7 @@
       <div class="row row-cols-md-3">
         <header class="col col-12 col-md-2 mt-2 mt-md-0">
           <nav
-            class="d-flex justify-content-evenly fixed-bottom mb-3 mb-md-0 py-2"
+            class="d-flex justify-content-evenly fixed-bottom mb-3 mb-md-0 py-2 bg-black p-3 opacity-75"
           >
             <i class="bi bi-three-dots d-none d-md-block my-md-2"></i>
             <i
@@ -38,12 +38,66 @@
                 >La tua libreria</span
               ></i
             >
+            <div class="d-none d-lg-flex flex-column mt-3">
+              <i
+                class="bi bi-plus-square my-md-2 d-md-inline d-flex flex-column align-items-center"
+                ><span class="d-block d-md-inline ms-md-3"
+                  >Crea playlist</span
+                ></i
+              >
+              <i
+                class="bi bi-heart-fill my-md-2 d-md-inline d-flex flex-column align-items-center"
+                ><span class="d-block d-md-inline ms-md-3"
+                  >Brani che ti piacciono</span
+                ></i
+              >
+              <i
+                class="bi bi-bookmark-fill my-md-2 d-md-inline d-flex flex-column align-items-center"
+                ><span class="d-block d-md-inline ms-md-3"
+                  >I tuoi episodi</span
+                ></i
+              >
+            </div>
+            <div id="playlist" class="d-none d-lg-flex flex-column border-top">
+              <ul>
+                <li>prima</li>
+                <li>seconda</li>
+                <li>terza</li>
+                <li>quarta</li>
+                <li>quinta</li>
+                <li>sesta</li>
+                <li>settima</li>
+                <li>ottava</li>
+                <li>nona</li>
+                <li>decima</li>
+                <li>prima</li>
+                <li>seconda</li>
+                <li>terza</li>
+                <li>quarta</li>
+                <li>quinta</li>
+                <li>sesta</li>
+                <li>settima</li>
+                <li>ottava</li>
+                <li>nona</li>
+                <li>decima</li>
+                <li>prima</li>
+                <li>seconda</li>
+                <li>terza</li>
+                <li>quarta</li>
+                <li>quinta</li>
+                <li>sesta</li>
+                <li>settima</li>
+                <li>ottava</li>
+                <li>nona</li>
+                <li>decima</li>
+              </ul>
+            </div>
           </nav>
         </header>
         <main id="main" class="col col-12 col-md-8 px-5">
           <div
             id="top"
-            class="row justify-content-center align-items-center flex-column flex-lg-row"
+            class="row justify-content-center align-items-center flex-column flex-lg-row shadow-lg pb-4"
           >
             <div class="col-12 d-none d-lg-flex my-3 justify-content-between">
               <div class="d-flex">
@@ -104,7 +158,10 @@
               <div class="d-flex flex-column">
                 <p class="m-0 d-none d-lg-flex">album</p>
                 <p id="title" class="mb-2 mt-0 h1 album-title">Album Title</p>
-                <div id="album-info" class="d-flex flex-column flex-lg-row">
+                <div
+                  id="album-info"
+                  class="d-flex flex-column flex-lg-row align-items-lg-center"
+                >
                   <p class="mb-1 d-md-inline">
                     <img
                       src="assets/imgs/main/image-3.jpg"
@@ -168,7 +225,79 @@
           </div>
         </main>
 
-        <footer class="col col-12 col-md-2 bg-white">FOOTER</footer>
+        <footer class="col col-12 col-md-2 bg-black flex-column mt-2 px-3">
+          <div class="d-flex align-items-center justify-content-between">
+            <p class="m-0 h6">Attività amici</p>
+            <div>
+              <i class="bi bi-person-plus-fill fs-5"></i>
+              <i class="bi bi-x-lg fs-5"></i>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between mt-4">
+            <div class="d-flex align-items-start">
+              <img
+                src="./assets/imgs/main/image-16.jpg"
+                alt="pic"
+                width="25px"
+                class="rounded-circle"
+              />
+            </div>
+            <div class="d-flex flex-column">
+              <h4 class="m-0">Nome amico</h4>
+              <small class="m0">brano in play · Artist</small>
+              <p class="m0">
+                <i class="bi bi-music-note-beamed fs-6">
+                  <small>Album</small></i
+                >
+              </p>
+            </div>
+            <div>
+              <small class="m-0">2 ore fa</small>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between mt-4">
+            <div class="d-flex align-items-start">
+              <img
+                src="./assets/imgs/main/image-16.jpg"
+                alt="pic"
+                width="25px"
+                class="rounded-circle"
+              />
+            </div>
+            <div class="d-flex flex-column">
+              <h4 class="m-0">Nome amico</h4>
+              <small class="m0">brano in play · Artist</small>
+              <p class="m0">
+                <i class="bi bi-music-note-beamed fs-6">
+                  <small>Album</small></i
+                >
+              </p>
+            </div>
+            <div>
+              <small class="m-0">2 ore fa</small>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between mt-4">
+            <div class="d-flex align-items-start">
+              <img
+                src="./assets/imgs/main/image-16.jpg"
+                alt="pic"
+                width="25px"
+                class="rounded-circle"
+              />
+            </div>
+            <div class="d-flex flex-column">
+              <h4 class="m-0">Nome amico</h4>
+              <small class="m0">brano in play · Artist</small>
+              <p class="m0">
+                <i class="bi bi-vinyl fs-6"> <small>Album</small></i>
+              </p>
+            </div>
+            <div>
+              <small class="m-0">2 ore fa</small>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
     <script
