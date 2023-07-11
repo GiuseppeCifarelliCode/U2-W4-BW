@@ -9,10 +9,7 @@ const searchGenerator = function (URL) {
       }
     })
     .then((data) => {
-      console.log(data);
       let newdata = data.data;
-      console.log(newdata);
-
       newdata.forEach((element) => {
         let riga = document.getElementById("riga");
         let col = document.createElement("div");
@@ -36,13 +33,11 @@ const input = document.getElementById("basic-addon1");
 input.addEventListener("click", function () {
   const ricerca1 = document.querySelector(".form-control");
   const ricerca2 = ricerca1.value;
-  console.log(ricerca2);
   let scomparsa = document.querySelectorAll(".scompari");
   scomparsa.forEach((e) => {
     e.classList.add("d-none");
   });
   const URL = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${ricerca2}`;
-  console.log(URL);
   searchGenerator(URL);
 });
 
