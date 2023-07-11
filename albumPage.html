@@ -41,11 +41,15 @@
           </nav>
         </header>
         <main id="main" class="col col-12 col-md-7">
-          <div class="row row-cols-1 row-cols-lg-2">
+          <div
+            id="top"
+            class="row justify-content-center align-items-center flex-column flex-lg-row"
+          >
             <div
-              class="col d-flex flex-column flex-md-row align-items-md-center flex-grow-1 bg-danger"
+              class="col d-flex flex-column flex-lg-row justify-content-center justify-content-lg-end align-items-center"
             >
-              <div class="text-center">
+              <i class="bi bi-arrow-left"></i>
+              <div class="img-cont">
                 <img
                   class="img-fluid shadow-lg"
                   id="album-cover"
@@ -53,9 +57,9 @@
                   alt="album cover"
                 />
               </div>
-              <div class="flex-grow-1 d-flex flex-column">
+              <div class="d-flex flex-column">
                 <p class="m-0 d-none d-lg-flex">album</p>
-                <p id="title" class="mb-2 mt-3 h1 album-title">Album Title</p>
+                <p id="title" class="mb-2 mt-0 h1 album-title">Album Title</p>
                 <div id="album-info" class="d-flex">
                   <p class="mb-1 d-md-inline">
                     <img
