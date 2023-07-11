@@ -20,10 +20,10 @@ const searchGenerator = function (URL) {
    <div class="card-body d">
      <h5 class="card-title">${element.title} </h5>
      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <audio
+    <audio class="w-100"
         controls
-        src="${data.link}">
-            <a href="/media/cc0-audio/t-rex-roar.mp3">
+        src=${element.link}>
+            <a href=${element.link}>
                 Download audio
             </a>
     </audio>
