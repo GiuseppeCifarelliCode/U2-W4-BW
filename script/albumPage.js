@@ -36,6 +36,7 @@ const getAlbum = function () {
                     <p class="m-0 d-none d-lg-flex">&nbsp; · ${year} · ${data.nb_tracks} brani, ${minutes} min ${seconds} sec. &nbsp;</p>
                     <p class="m-0 d-lg-none">album · ${year}</p>
                     `
+
       const tracks = data.tracks.data
       tracks.forEach((element, i) => {
         let time = element.duration
@@ -52,7 +53,8 @@ const getAlbum = function () {
           "row-cols-3",
           "py-2",
           "justify-content-between",
-          "align-items-center"
+          "align-items-center",
+          "song-row"
         )
         newRow.innerHTML = `
 
@@ -79,3 +81,8 @@ const getAlbum = function () {
     })
 }
 getAlbum()
+document
+  .getElementsByClassName("chevron")[0]
+  .addEventListener("click", function () {
+    window.location.href = "./index.html"
+  })

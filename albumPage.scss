@@ -14,7 +14,7 @@ nav {
 
 .album-title {
   @media screen and (min-width: 768px) {
-    font-size: 5em;
+    font-size: 3.5em;
   }
 }
 .bi-clock {
@@ -33,4 +33,9 @@ i:hover {
   width: 35px;
   height: 35px;
   padding: 0.1%;
+}
+.song-row:hover {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  cursor: pointer;
 }
