@@ -108,7 +108,7 @@ aTag.classList.add("d-none")
 document.getElementById("top").appendChild(aTag)
 const audioPlay = function (arr, i) {
   let sMP3 = document.createElement("source")
-  sMP3.classList.add("source-mp3")
+  sMP3.classList.add("source-mp3", "text-center")
   sMP3.src = playerList[i]
   sMP3.type = "audio/mp3"
   aTag.classList.remove("d-none")
