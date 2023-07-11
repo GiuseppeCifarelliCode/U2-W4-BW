@@ -46,6 +46,9 @@ i:hover {
     list-style: none;
     li {
       margin-top: 0.5em;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
   overflow-y: scroll;
@@ -67,4 +70,7 @@ audio::-webkit-media-controls-time-remaining-display {
 }
 audio::-webkit-media-controls-timeline-container {
   color: white;
+}
+#heart.bi-heart-fill {
+  color: #1fdf64;
 }

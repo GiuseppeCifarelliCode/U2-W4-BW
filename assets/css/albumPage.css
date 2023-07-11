@@ -132,6 +132,9 @@ i:hover {
 #playlist ul li {
   margin-top: 0.5em;
 }
+#playlist ul li:hover {
+  cursor: pointer;
+}
 
 audio::-webkit-media-controls-panel {
   background-color: rgba(31, 31, 31, 0.902);
@@ -153,4 +156,8 @@ audio::-webkit-media-controls-time-remaining-display {
 
 audio::-webkit-media-controls-timeline-container {
   color: white;
+}
+
+#heart.bi-heart-fill {
+  color: #1fdf64;
 }/*# sourceMappingURL=albumPage.css.map */

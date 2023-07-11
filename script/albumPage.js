@@ -116,3 +116,7 @@ const audioPlay = function (arr, i) {
 
   document.querySelector("nav").appendChild(aTag)
 }
+document.getElementById("heart").addEventListener("click", function () {
+  document.getElementById("heart").classList.toggle("bi-heart")
+  document.getElementById("heart").classList.toggle("bi-heart-fill")
+})
