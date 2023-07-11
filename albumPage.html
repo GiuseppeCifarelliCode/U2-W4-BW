@@ -19,7 +19,7 @@
   <body class="p-2">
     <div class="container-fluid">
       <div class="row row-cols-md-3">
-        <header class="col col-12 col-md-3 mt-3 mt-md-0">
+        <header class="col col-12 col-md-2 mt-2 mt-md-0">
           <nav
             class="d-flex justify-content-evenly fixed-bottom mb-3 mb-md-0 py-2"
           >
@@ -40,12 +40,16 @@
             >
           </nav>
         </header>
-        <main id="main" class="col col-12 col-md-7">
-          <div class="row row-cols-1 row-cols-lg-2">
+        <main id="main" class="col col-12 col-md-8">
+          <div
+            id="top"
+            class="row justify-content-center align-items-center flex-column flex-lg-row"
+          >
             <div
-              class="col d-flex flex-column flex-md-row align-items-md-center flex-grow-1 bg-danger"
+              class="col d-flex flex-column flex-lg-row justify-content-center justify-content-lg-end align-items-center gap-4"
             >
-              <div class="text-center">
+              <div class="img-cont d-flex">
+                <i class="bi bi-arrow-left d-lg-none"></i>
                 <img
                   class="img-fluid shadow-lg"
                   id="album-cover"
@@ -53,9 +57,9 @@
                   alt="album cover"
                 />
               </div>
-              <div class="flex-grow-1 d-flex flex-column">
+              <div class="d-flex flex-column">
                 <p class="m-0 d-none d-lg-flex">album</p>
-                <p id="title" class="mb-2 mt-3 h1 album-title">Album Title</p>
+                <p id="title" class="mb-2 mt-0 h1 album-title">Album Title</p>
                 <div id="album-info" class="d-flex">
                   <p class="mb-1 d-md-inline">
                     <img

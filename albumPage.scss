@@ -24,3 +24,8 @@ nav {
 i:hover {
   cursor: pointer;
 }
+#album-cover {
+  @media screen and (min-width: 768px) {
+    width: 30vw;
+  }
+}

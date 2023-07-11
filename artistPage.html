@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Artist Page</title>
+    <title>Album Page</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -54,7 +54,7 @@
             </div>
           </div>
         </header>
-        <main class="col col-12 col-md-7 bg-black text-white">
+        <main class="col col-12 col-md-7 bg-warning">
           <div class="row row-cols-1 row-cols-lg-2">
             <div class="col d-flex flex-column flex-md-row">
               <div class="text-center">
@@ -68,50 +68,38 @@
               <div id="immagine" class="flex-md-grow-1">
                 <p id="nome" class="m-0 h2">Name Artist</p>
                 <div class="">
-                  <p class="m-0 d-md-inline">3.961.093 ascoltatori mensili</p>
+                  <p class="m-0 d-md-inline">Artist name</p>
+                  <p class="m-0 d-md-inline">Album · <span>year</span></p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row mt-2 bg-black">
+          <div class="row mt-2 bg-secondary">
             <div class="col d-flex align-items-center gap-3 my-2">
               <div class="bg-success rounded-circle d-none d-md-flex">
                 <i class="bi bi-play-fill"></i>
               </div>
-              <button type="button" class="btn btn-dark">Seguiti</button>
-
+              <div class=""><i class="bi bi-heart"></i></div>
+              <div class=""><i class="bi bi-arrow-down-circle"></i></div>
               <div class="">
                 <i class="bi bi-three-dots d-none d-md-flex"></i>
               </div>
               <div class="">
-                <i class="bi bi-three-dots-vertical d-md-none rounded-1"></i>
+                <i class="bi bi-three-dots-vertical d-md-none"></i>
               </div>
             </div>
             <div class="col-2 d-flex d-md-none gap-2">
               <div><i class="bi bi-shuffle"></i></div>
-              <div class="bg-success rounded-circle p-3 text-light">
+              <div class="bg-success rounded-circle">
                 <i class="bi bi-play-fill"></i>
               </div>
             </div>
           </div>
-          <h4 class="mt-4 text-white">Popolari</h4>
-          <div class="icona d-flex">
-            <img
-              class="pt-3 rounded-circle mb-4"
-              src="assets/imgs/main/image-11.jpg"
-              alt="img"
-              style="width: 64px"
-            />
-
-            <p class="d-flex column mt-4 mx-4">
-              Brani che ti piaccioni <br />8 Brani
-            </p>
-          </div>
           <div class="row">
             <div
               class="col-12 border-bottom d-flex justify-content-between justify-content-lg-evenly align-items-center px-3 gap-4"
             >
-              <div class="number">1</div>
+              <div class="d-none d-lg-flex">1</div>
               <div class="flex-grow-1">
                 <p class="m-0">Song Title</p>
                 <p class="m-0">Artist name</p>
@@ -129,7 +117,7 @@
             <div
               class="col-12 border-bottom d-flex justify-content-between justify-content-lg-evenly align-items-center px-3 gap-4"
             >
-              <div class="number">2</div>
+              <div class="d-none d-lg-flex">1</div>
               <div class="flex-grow-1">
                 <p class="m-0">Song Title</p>
                 <p class="m-0">Artist name</p>
@@ -147,7 +135,7 @@
             <div
               class="col-12 border-bottom d-flex justify-content-between justify-content-lg-evenly align-items-center px-3 gap-4"
             >
-              <div class="number">3</div>
+              <div class="d-none d-lg-flex">1</div>
               <div class="flex-grow-1">
                 <p class="m-0">Song Title</p>
                 <p class="m-0">Artist name</p>
@@ -165,7 +153,7 @@
             <div
               class="col-12 border-bottom d-flex justify-content-between justify-content-lg-evenly align-items-center px-3 gap-4"
             >
-              <div class="number">4</div>
+              <div class="d-none d-lg-flex">1</div>
               <div class="flex-grow-1">
                 <p class="m-0">Song Title</p>
                 <p class="m-0">Artist name</p>
@@ -183,7 +171,7 @@
             <div
               class="col-12 border-bottom d-flex justify-content-between justify-content-lg-evenly align-items-center px-3 gap-4"
             >
-              <div class="number">5</div>
+              <div class="d-none d-lg-flex">1</div>
               <div class="flex-grow-1">
                 <p class="m-0">Song Title</p>
                 <p class="m-0">Artist name</p>
@@ -198,7 +186,7 @@
             </div>
           </div>
         </main>
-        <footer class="col col-12 col-md-2 bg-black"></footer>
+        <footer class="col col-12 col-md-2 bg-white">FOOTER</footer>
       </div>
     </div>
     <script src="script/artist.js"></script>
