@@ -42,24 +42,27 @@ const getAlbum = function () {
         time = time - hours * 3600
         console.log(element)
         const newRow = document.createElement("div")
-        newRow.classList.add("row")
+        newRow.classList.add(
+          "row",
+          "row-cols-3",
+          "border-bottom",
+          "justify-content-between"
+        )
         newRow.innerHTML = `
-      <div
-              class="col-12 border-bottom d-flex justify-content-between justify-content-lg-evenly align-items-center px-3 gap-4 py-2"
-            >
-              <div class="d-none d-lg-flex">${i + 1}</div>
-              <div class="flex-grow-1">
-                <p class="m-0">${element.title}</p>
+
+              <div class="d-none d-lg-flex col-1">${i + 1}</div>
+              <div class=" col flex-grow-1">
+                <p class="m-0 text-truncate">${element.title}</p>
                 <p class="m-0">${element.artist.name}</p>
               </div>
-              <div class="d-lg-none">
+              <div class="d-lg-none col-1">
                 <i class="bi bi-three-dots-vertical"></i>
               </div>
-              <div class="d-none d-lg-flex flex-grow-1 justify-content-between">
+              <div class="d-none d-lg-flex justify-content-between col">
                 <p class="mt-0">${element.rank}</p>
                 <p class="mt-0">${minutes}:${seconds}</p>
               </div>
-            </div>
+            
       `
         document.getElementById("main").appendChild(newRow)
       })
