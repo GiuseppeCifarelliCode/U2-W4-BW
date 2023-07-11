@@ -1,12 +1,10 @@
 
 
-const indirizzo= new URLSearchParams(location.search)
-const eventquery= indirizzo.get('query')
 
 
 
-const pippo= document.getElementById("basic-addon1")
-pippo.addEventListener('click',function(){
+const input= document.getElementById("basic-addon1")
+input.addEventListener('click',function(){
     const ricerca1=document.querySelector('.form-control')
 const ricerca2=ricerca1.value
 console.log(ricerca2)
@@ -35,11 +33,11 @@ fetch(URL)
      
         let riga=document.getElementById('riga')
      let col=document.createElement('div')
-     col.classList.add('col')
+     col.classList.add('col','d-flex')
      col.innerHTML=`<div class="card" style="width: 18rem;">
      <img src=${element.album.cover_medium
-     } class="card-img-top" alt="...">
-     <div class="card-body">
+     } class="card-img-top " alt="...">
+     <div class="card-body d">
        <h5 class="card-title">${element.title} </h5>
        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
        <a href="#" class="btn btn-primary">Go somewhere</a>
