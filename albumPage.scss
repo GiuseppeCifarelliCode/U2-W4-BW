@@ -46,8 +46,31 @@ i:hover {
     list-style: none;
     li {
       margin-top: 0.5em;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
   overflow-y: scroll;
   max-height: 80vh;
+}
+audio::-webkit-media-controls-panel {
+  background-color: rgba(31, 31, 31, 0.902);
+  color: white;
+}
+audio::-webkit-media-controls-play-button {
+  background-color: #1fdf64;
+  border-radius: 50%;
+}
+audio::-webkit-media-controls-current-time-display {
+  color: white;
+}
+audio::-webkit-media-controls-time-remaining-display {
+  color: white;
+}
+audio::-webkit-media-controls-timeline-container {
+  color: white;
+}
+#heart.bi-heart-fill {
+  color: #1fdf64;
 }

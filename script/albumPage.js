@@ -23,6 +23,8 @@ const getAlbum = function () {
       const seconds = time - minutes * 60
       const hours = Math.floor(time / 3600)
       time = time - hours * 3600
+      document.getElementById("spinner").classList.add("d-none")
+      document.getElementById("head-album").classList.remove("d-none")
       document.getElementById("album-info").innerHTML = ` 
                       <div>
                       <p class="m-0">
@@ -80,7 +82,6 @@ const getAlbum = function () {
       for (let i = 0; i < songRow.length; i++) {
         songRow[i].addEventListener("click", function () {
           audioPlay(playerList, i)
-          console.log(playerList, "pl")
         })
       }
       // songRow.forEach((song, i) => {
@@ -107,7 +108,7 @@ aTag.classList.add("d-none")
 document.getElementById("top").appendChild(aTag)
 const audioPlay = function (arr, i) {
   let sMP3 = document.createElement("source")
-  sMP3.classList.add("source-mp3")
+  sMP3.classList.add("source-mp3", "text-center")
   sMP3.src = playerList[i]
   sMP3.type = "audio/mp3"
   aTag.classList.remove("d-none")
@@ -115,3 +116,7 @@ const audioPlay = function (arr, i) {
 
   document.querySelector("nav").appendChild(aTag)
 }
+document.getElementById("heart").addEventListener("click", function () {
+  document.getElementById("heart").classList.toggle("bi-heart")
+  document.getElementById("heart").classList.toggle("bi-heart-fill")
+})

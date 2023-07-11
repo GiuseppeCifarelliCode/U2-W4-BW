@@ -143,8 +143,23 @@
                 </div>
               </div>
             </div>
+            <div id="spinner" class="d-flex justify-content-center">
+              <div class="spinner-grow text-success" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <div class="spinner-grow text-success" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <div class="spinner-grow text-success" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <div class="spinner-grow text-success" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
             <div
-              class="col d-flex flex-column flex-lg-row justify-content-center justify-content-lg-end align-items-center gap-4"
+              id="head-album"
+              class="col d-flex flex-column flex-lg-row justify-content-center justify-content-lg-end align-items-center gap-4 d-none"
             >
               <div class="img-cont d-flex flex-grow-1">
                 <i class="bi bi-arrow-left d-lg-none"></i>
@@ -188,7 +203,7 @@
               >
                 <i class="play2 bi bi-play-fill"></i>
               </div>
-              <div class=""><i class="bi bi-heart"></i></div>
+              <div class=""><i id="heart" class="bi bi-heart"></i></div>
               <div class=""><i class="bi bi-arrow-down-circle"></i></div>
               <div class="d-md-none">
                 <i class="bi bi-three-dots-vertical"></i>
@@ -225,7 +240,9 @@
           </div>
         </main>
 
-        <footer class="col col-12 col-md-2 bg-black flex-column mt-2 px-3">
+        <footer
+          class="col col-12 col-md-2 bg-black flex-column mt-2 px-3 d-none d-lg-flex"
+        >
           <div class="d-flex align-items-center justify-content-between">
             <p class="m-0 h6">Attività amici</p>
             <div>
