@@ -27,6 +27,41 @@ h3 {
   font-size: 1.8em;
 }
 
+@media screen and (min-width: 678px) {
+  main {
+    background: rgb(36, 35, 36);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgb(36, 35, 36)), color-stop(100%, rgb(3, 3, 3)));
+    background: linear-gradient(to bottom, rgb(36, 35, 36) 0%, rgb(3, 3, 3) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#242324", endColorstr="#030303", GradientType=0 );
+  }
+  .bgViola {
+    background: rgb(36, 35, 36);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgb(36, 35, 36)), color-stop(27%, rgb(10, 9, 10)), color-stop(38%, rgb(10, 10, 10)), color-stop(56%, rgb(0, 0, 0)), color-stop(100%, rgb(3, 3, 3)));
+    background: linear-gradient(to bottom, rgb(36, 35, 36) 0%, rgb(10, 9, 10) 27%, rgb(10, 10, 10) 38%, rgb(0, 0, 0) 56%, rgb(3, 3, 3) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#242324", endColorstr="#030303", GradientType=0 );
+  }
+  .bgi {
+    background-color: #2A2A2A !important;
+  }
+  .hiddenb {
+    font-size: 0.6rem;
+  }
+  .btprofile {
+    background-color: black;
+  }
+  button img {
+    width: 2em;
+  }
+}
+.card-music {
+  background-color: rgb(66, 66, 70);
+  background: linear-gradient(90deg, rgb(66, 66, 70) 0%, rgb(73, 73, 73) 45%, rgb(175, 177, 177) 100%);
+}
+
+.radiu {
+  border-radius: 20px;
+}
+
 nav {
   background-color: rgba(0, 0, 0, 0.45);
 }
@@ -56,4 +91,11 @@ i:hover {
   #album-cover {
     width: 30vw;
   }
+}
+
+.chevron {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  padding: 0.1%;
 }/*# sourceMappingURL=albumPage.css.map */
