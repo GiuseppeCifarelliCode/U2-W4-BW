@@ -1,6 +1,5 @@
-@import "assets/scss/partials/variables", "assets/scss/partials/color",
-  "assets/scss/partials/header", "assets/scss/partials/main",
-  "assets/scss/partials/footer";
+@import "assets/scss/partials/color", "assets/scss/partials/header",
+  "assets/scss/partials/main", "assets/scss/partials/footer";
 
 nav {
   background-color: rgba(0, 0, 0, 0.45);
@@ -23,4 +22,15 @@ nav {
 }
 i:hover {
   cursor: pointer;
+}
+#album-cover {
+  @media screen and (min-width: 768px) {
+    width: 30vw;
+  }
+}
+.chevron {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  padding: 0.1%;
 }
