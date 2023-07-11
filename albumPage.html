@@ -47,16 +47,16 @@
             >
               <div class="text-center">
                 <img
-                  class="img-fluid"
+                  class="img-fluid shadow-lg"
                   id="album-cover"
                   src="assets/imgs/main/image-11.jpg"
                   alt="album cover"
                 />
               </div>
               <div class="flex-grow-1 d-flex flex-column">
-                <p class="m-0 d-none d-md-flex">album</p>
+                <p class="m-0 d-none d-lg-flex">album</p>
                 <p id="title" class="mb-2 mt-3 h1 album-title">Album Title</p>
-                <div>
+                <div id="album-info" class="d-flex">
                   <p class="mb-1 d-md-inline">
                     <img
                       src="assets/imgs/main/image-3.jpg"
@@ -64,9 +64,14 @@
                       class="rounded-circle"
                       width="25px"
                     />
-                    Artist name
+                    <span id="artist-name">Artist name</span>
+
+                    <span id="album-place" class="d-lg-none">Album</span> ·
+                    <span id="year-place">year</span>
+                    <span id="tracks" class="d-none d-lg-flex"></span>
+                    <span class="d-none d-lg-flex">·</span>
+                    <span id="duration" class="d-none d-lg-flex"></span>
                   </p>
-                  <p class="mb-1 d-md-inline">Album · <span>year</span></p>
                 </div>
               </div>
             </div>
