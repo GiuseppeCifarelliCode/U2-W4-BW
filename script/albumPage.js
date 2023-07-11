@@ -1,5 +1,6 @@
 const myUrl = "https://striveschool-api.herokuapp.com/api/deezer/album/"
 let id = 75621062
+const playerList = []
 const getAlbum = function () {
   fetch(myUrl + id)
     .then((res) => {
@@ -38,6 +39,7 @@ const getAlbum = function () {
                     `
       const tracks = data.tracks.data
       tracks.forEach((element, i) => {
+        playerList.push(element.preview)
         let time = element.duration
         const date = data.release_date
         const year = date.slice(0, 4)
@@ -72,7 +74,19 @@ const getAlbum = function () {
             
       `
         document.getElementById("main").appendChild(newRow)
+        console.log(playerList)
       })
+      let songRow = document.getElementsByClassName("song-row")
+      for (let i = 0; i < songRow.length; i++) {
+        songRow[i].addEventListener("click", function () {
+          audioPlay(playerList, i)
+          console.log(playerList, "pl")
+        })
+      }
+      // songRow.forEach((song, i) => {
+      //   song.addEventListener("click", audioPlay(playerList, i))
+      // })
+      console.log(songRow)
     })
 
     .catch((err) => {
@@ -85,3 +99,19 @@ document
   .addEventListener("click", function () {
     window.location.href = "./index.html"
   })
+let aTag = document.createElement("audio")
+aTag.id = "play"
+aTag.controls = true
+aTag.autoplay = true
+aTag.classList.add("d-none")
+document.getElementById("top").appendChild(aTag)
+const audioPlay = function (arr, i) {
+  let sMP3 = document.createElement("source")
+  sMP3.classList.add("source-mp3")
+  sMP3.src = playerList[i]
+  sMP3.type = "audio/mp3"
+  aTag.classList.remove("d-none")
+  aTag.appendChild(sMP3)
+
+  document.querySelector("nav").appendChild(aTag)
+}
