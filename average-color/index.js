@@ -94,3 +94,6 @@ const start = function () {
   // console.log del risultato
   console.log(mostRecurrentHex);
 };
+
+// generateImage();
+// start();
