@@ -19,16 +19,11 @@ col.forEach((col, i) => {
       .then((data) => {
         let newdata = data.data;
         console.log(newdata);
-        newdata.forEach((el)=>{
-        console.log(`${el.album.id}`)
-        window.location.href=`albumPage.html?id=${el.album.id}`
-
-        })
-        })
-       
-       
-
-      
+        newdata.forEach((el) => {
+          console.log(`${el.album.id}`);
+          window.location.href = `albumPage.html?id=${el.album.id}`;
+        });
+      })
 
       .catch((err) => {
         console.log(err);
