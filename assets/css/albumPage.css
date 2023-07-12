@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap");
 body {
   background-color: black;
   color: white;
@@ -47,10 +48,6 @@ h3 {
     border-top-right-radius: 20px;
     border-color: green !important;
   }
-  .al {
-    border-top-right-radius: 20px;
-    border-color: green !important;
-  }
   .hiddenb {
     font-size: 0.6rem;
   }
@@ -83,6 +80,10 @@ h3 {
 
 .radiu {
   border-radius: 20px;
+}
+
+.A {
+  font-family: "Roboto", sans-serif;
 }
 
 nav {
