@@ -35,7 +35,7 @@ const ricerca = function () {
         })
         .then((el) => {
           console.log(el);
-          el.data.forEach((el, i) => {
+          el.data.forEach((el) => {
             playerList.push(el.preview);
 
             let time = el.duration;
@@ -50,9 +50,10 @@ const ricerca = function () {
 
             let col = document.createElement("div");
             col.classList.add("col", "col-12", "d-flex", "song-row");
-            col.innerHTML = `  <div class="d-none d-lg-flex col-1">${
-              i + 1
-            }</div>
+            col.innerHTML = `  <div class=" mx-2 d-lg-flex col-1">
+            <img src=${
+              el.album.cover
+            } class="card-img-top" alt="...">   </div>
      <div class=" col flex-grow-1">
        <p class="m-0 text-truncate">${el.title}</p>
        <p class="m-0">${el.artist.name}</p>
