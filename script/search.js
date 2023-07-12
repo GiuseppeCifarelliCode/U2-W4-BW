@@ -2,7 +2,6 @@ const searchGenerator = function (URL) {
   fetch(URL)
     .then((res) => {
       if (res.ok) {
-        console.log(res);
         return res.json();
       } else {
         throw new Error("errore");
@@ -10,20 +9,41 @@ const searchGenerator = function (URL) {
     })
     .then((data) => {
       let newdata = data.data;
+      console.log(data);
       newdata.forEach((element) => {
         let riga = document.getElementById("riga");
         let col = document.createElement("div");
-        col.classList.add("col", "d-flex", "scompari");
-        col.innerHTML = `<div class="card" style="width: 18rem;">
-   <img src=${element.album.cover_medium} class="card-img-top " alt="...">
-   <div class="card-body d">
+        col.classList.add(
+          "col",
+          "d-flex",
+          "scompari",
+          "justify-content-center"
+        );
+        col.innerHTML = `<div class="card w-100">
+   <img src=${element.album.cover_medium} class="card-img-top" alt="${element.title}">
+   <div class="card-body d-flex flex-column justify-content-between">
      <h5 class="card-title">${element.title} </h5>
-     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-     <a href="#" class="btn btn-primary">Go somewhere</a>
+    <audio class="w-100"
+        controls
+        src=${element.preview}>
+            <a href=${element.preview}>
+                Download audio
+            </a>
+    </audio>
+</figure>
    </div>
  </div>    `;
 
         riga.appendChild(col);
+      });
+      const allImgCards = document.querySelectorAll(".card-img-top");
+      allImgCards.forEach((img) => {
+        let context = draw(img);
+        let allColors = getColors(context);
+        console.log(allColors);
+        // let mostRecurrent = findMostRecurrentColor(allColors);
+        // let mostRecurrentHex = pad(mostRecurrent);
+        // console.log(mostRecurrentHex);
       });
     })
     .catch((err) => console.log(err));

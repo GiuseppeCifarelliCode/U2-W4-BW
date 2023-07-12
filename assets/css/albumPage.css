@@ -47,6 +47,10 @@ h3 {
     border-top-right-radius: 20px;
     border-color: green !important;
   }
+  .al {
+    border-top-right-radius: 20px;
+    border-color: green !important;
+  }
   .hiddenb {
     font-size: 0.6rem;
   }
@@ -90,11 +94,12 @@ nav {
   border-radius: 50%;
   width: 45px;
   height: 45px;
+  padding: 1.5em;
 }
 
 @media screen and (min-width: 768px) {
   .album-title {
-    font-size: 5em;
+    font-size: 3.5em;
   }
 }
 
@@ -117,4 +122,51 @@ i:hover {
   width: 35px;
   height: 35px;
   padding: 0.1%;
+}
+
+.song-row:hover {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+}
+
+#playlist {
+  overflow-y: scroll;
+  max-height: 80vh;
+}
+#playlist ul {
+  padding: 0;
+  list-style: none;
+}
+#playlist ul li {
+  margin-top: 0.5em;
+}
+#playlist ul li:hover {
+  cursor: pointer;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: rgba(31, 31, 31, 0.902);
+  color: white;
+}
+
+audio::-webkit-media-controls-play-button {
+  background-color: #1fdf64;
+  border-radius: 50%;
+}
+
+audio::-webkit-media-controls-current-time-display {
+  color: white;
+}
+
+audio::-webkit-media-controls-time-remaining-display {
+  color: white;
+}
+
+audio::-webkit-media-controls-timeline-container {
+  color: white;
+}
+
+#heart.bi-heart-fill {
+  color: #1fdf64;
 }/*# sourceMappingURL=albumPage.css.map */
