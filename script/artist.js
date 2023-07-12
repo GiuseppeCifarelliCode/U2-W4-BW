@@ -18,7 +18,7 @@ const ricerca = function () {
     })
     .then((data) => {
       console.log(data.tracklist);
-
+    
       let nome = document.getElementById("nome");
       nome.innerText = `${data.name}`;
       let immagine = document.getElementById("album-cover");
@@ -35,7 +35,7 @@ const ricerca = function () {
         })
         .then((el) => {
           console.log(el);
-          el.data.forEach((el, i) => {
+          el.data.forEach((el) => {
             playerList.push(el.preview);
 
             let time = el.duration;
@@ -50,9 +50,10 @@ const ricerca = function () {
 
             let col = document.createElement("div");
             col.classList.add("col", "col-12", "d-flex", "song-row");
-            col.innerHTML = `  <div class="d-none d-lg-flex col-1">${
-              i + 1
-            }</div>
+            col.innerHTML = `  <div class=" mx-2 d-lg-flex col-1">
+            <img src=${
+              el.album.cover
+            } class="card-img-top" alt="...">   </div>
      <div class=" col flex-grow-1">
        <p class="m-0 text-truncate">${el.title}</p>
        <p class="m-0">${el.artist.name}</p>
@@ -69,12 +70,30 @@ const ricerca = function () {
             brani.appendChild(col);
           });
 
-          let songRow = document.getElementsByClassName("song-row");
+          let songRow = document.getElementsByClassName("song-row")
           for (let i = 0; i < songRow.length; i++) {
+            let aTag = document.createElement("audio")
+            aTag.controls = true
+            aTag.autoplay = false
+            aTag.classList.add(
+              "d-none",
+              "position-fixed",
+              "bottom-0",
+              "start-50",
+              "translate-middle-x",
+              "w-50"
+            )
+            let sMP3 = document.createElement("source")
+            sMP3.classList.add("source-mp3")
+            aTag.appendChild(sMP3)
+            sMP3.src = playerList[i]
+            sMP3.type = "audio/mp3"
+            aTag.classList.remove("d-none")
+            document.getElementById("player").appendChild(aTag)
+    
             songRow[i].addEventListener("click", function () {
-              refreshPlayer();
-              audioPlay(playerList, i);
-            });
+              audioPlay(i)
+            })
           }
 
           document.getElementById("home").addEventListener("click", function () {
@@ -98,34 +117,27 @@ const ricerca = function () {
 
 ricerca();
 
-document
-  .getElementsByClassName("chevron")[0]
-  .addEventListener("click", function () {
-    window.location.href = "./index.html";
-  });
-let aTag = document.createElement("audio");
-aTag.id = "play";
-aTag.controls = true;
-aTag.autoplay = true;
-aTag.classList.add("d-none","position-fixed",
-"bottom-0",
-"start-50",
-"translate-middle-x",
-"w-50");
-let sMP3 = document.createElement("source");
-sMP3.classList.add("source-mp3");
-aTag.appendChild(sMP3);
-document.getElementById("top").appendChild(aTag);
-const refreshPlayer = function (src) {
-  sMP3.src = "";
-};
-const audioPlay = function (arr, i) {
-  sMP3.src = arr[i];
-  sMP3.type = "audio/mp3";
-  aTag.classList.remove("d-none");
+const audioPlay = function (n) {
+  const allSong = document.querySelectorAll("audio")
+  document.getElementById("player").classList.remove("d-none")
+  allSong.forEach((song, i) => {
+    song.addEventListener("ended", function () {
+      document.getElementById("player").classList.add("d-none")
+    })
+    if (i === n) {
+      song.classList.remove("d-none")
+      song.play()
+    } else {
+      song.classList.add("d-none")
+      song.pause()
+    }
+  })
+}
 
-  document.querySelector("nav").appendChild(aTag);
-};
+
+
+
+
 document.getElementById("heart").addEventListener("click", function () {
   document.getElementById("heart").classList.toggle("bi-heart");
   document.getElementById("heart").classList.toggle("bi-heart-fill");
