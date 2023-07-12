@@ -41,6 +41,9 @@ const getAlbum = function () {
                     <p class="m-0 d-none d-lg-flex">&nbsp; · ${year} · ${data.nb_tracks} brani, ${minutes} min ${seconds} sec. &nbsp;</p>
                     <p class="m-0 d-lg-none">album · ${year}</p>
                     `
+      document.getElementsByTagName(
+        "title"
+      )[0].innerText = `${data.artist.name}-${data.title}`
       const tracks = data.tracks.data
       tracks.forEach((element, i) => {
         playerList.push(element.preview)
@@ -107,7 +110,14 @@ let aTag = document.createElement("audio")
 aTag.id = "play"
 aTag.controls = true
 aTag.autoplay = true
-aTag.classList.add("d-none")
+aTag.classList.add(
+  "d-none",
+  "position-fixed",
+  "bottom-0",
+  "start-50",
+  "translate-middle-x",
+  "w-50"
+)
 let sMP3 = document.createElement("source")
 sMP3.classList.add("source-mp3")
 aTag.appendChild(sMP3)
