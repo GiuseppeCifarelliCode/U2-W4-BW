@@ -19,22 +19,24 @@ col.forEach((col, i) => {
       .then((data) => {
         let newdata = data.data;
         console.log(newdata);
-        newdata.forEach((el) => {
-          document.querySelector("article").classList.add("d-none");
-          document.querySelector("aside").classList.add("d-none");
-          let rowalbum = document.createElement("div");
-          rowalbum.classList.add("row");
-          let colalbum = document.createElement("div");
-          colalbum.classList.add("col", "col-12");
-          let card = document.createElement("div");
-        });
-      })
+        newdata.forEach((el)=>{
+        console.log(`${el.album.id}`)
+        window.location.href=`albumPage.html?id=${el.album.id}`
+
+        })
+        })
+       
+       
+
+      
 
       .catch((err) => {
         console.log(err);
       });
   });
-});
+})
+  
+
 
 
 

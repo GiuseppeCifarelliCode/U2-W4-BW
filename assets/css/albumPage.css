@@ -41,7 +41,11 @@ h3 {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#242324", endColorstr="#030303", GradientType=0 );
   }
   .bgi {
-    background-color: #2A2A2A !important;
+    background-color: #2a2a2a !important;
+  }
+  .al {
+    border-top-right-radius: 20px;
+    border-color: green !important;
   }
   .al {
     border-top-right-radius: 20px;
@@ -58,6 +62,7 @@ h3 {
   }
   .colonna:hover {
     transform: scale(1.2);
+    transition: transform 0.8s;
     z-index: 1;
     font-style: italic;
     color: green !important;
@@ -65,6 +70,10 @@ h3 {
   .mh:hover {
     background: rgb(66, 66, 70);
     background: linear-gradient(90deg, rgb(66, 66, 70) 0%, rgb(73, 73, 73) 0%, rgb(175, 177, 177) 100%);
+  }
+  .cardAlbum {
+    height: 10rem;
+    width: 7rem;
   }
 }
 .card-music {
