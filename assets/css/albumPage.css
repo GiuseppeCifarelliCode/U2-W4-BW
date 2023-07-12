@@ -47,10 +47,6 @@ h3 {
     border-top-right-radius: 20px;
     border-color: green !important;
   }
-  .al {
-    border-top-right-radius: 20px;
-    border-color: green !important;
-  }
   .hiddenb {
     font-size: 0.6rem;
   }
@@ -113,7 +109,7 @@ i:hover {
 
 @media screen and (min-width: 768px) {
   #album-cover {
-    width: 30vw;
+    max-width: 20vw;
   }
 }
 
