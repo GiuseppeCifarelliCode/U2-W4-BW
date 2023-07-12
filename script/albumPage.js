@@ -72,7 +72,7 @@ const getAlbum = function () {
                 <p class="m-0 text-truncate">${element.title}</p>
                 <p class="m-0">${element.artist.name}</p>
                 </div>
-                <div id="player${i}" class="d-md-none">
+                <div id="player${i}" class="d-md-none d-flex justify-content-end flex-grow-1">
                  
                 </div>
               </div>
