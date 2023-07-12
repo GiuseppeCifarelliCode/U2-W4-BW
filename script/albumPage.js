@@ -1,4 +1,6 @@
 const myUrl = "https://striveschool-api.herokuapp.com/api/deezer/album/"
+const addressBarContent = new URLSearchParams(location.search)
+const eventId = addressBarContent.get("id")
 let id = 75621062
 const playerList = []
 const getAlbum = function () {
