@@ -94,9 +94,58 @@
             </div>
           </nav>
         </header>
-        <main class="col col-12 col-md-7 bg-warning">
-          <div class="row row-cols-1 row-cols-lg-2">
-            <div class="col d-flex flex-column flex-md-row">
+        <main id="main" class="col col-12 col-md-7 bg-dark">
+           <div class="row row-cols-1 "> 
+            <div class="col d-flex flex-column flex-md-row"> 
+              <div
+              id="top"
+              class="row justify-content-center align-items-center flex-column flex-lg-row shadow-lg pb-4"
+            >
+              <div class="col-12 d-none d-lg-flex my-3 justify-content-between">
+                <div class="d-flex">
+                  <p
+                    class="m-0 bg-dark chevron d-flex justify-content-center align-items-center"
+                  >
+                    <i class="bi bi-chevron-left"></i>
+                  </p>
+                  <p
+                    class="m-0 bg-dark chevron d-flex justify-content-center align-items-center"
+                  >
+                    <i class="bi bi-chevron-right"></i>
+                  </p>
+                </div>
+                <div>
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-dark dropdown-toggle rounded-pill"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <img
+                        src="./assets/imgs/main/image-14.jpg"
+                        width="20px"
+                        alt="profile pic"
+                        class="rounded-circle"
+                      />
+                      Nome utente
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                      <li>
+                        <a class="dropdown-item active" href="#">Profilo</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Le mie playlist</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Log-out</a>
+                      </li>
+                      <li><hr class="dropdown-divider" /></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+         
               <div class="text-center">
                 <img
                   class="img-fluid"
@@ -108,8 +157,8 @@
               <div id="immagine" class="flex-md-grow-1">
                 <p id="nome" class="m-0 h2">Name Artist</p>
                 <div class="">
-                  <p class="m-0 d-md-inline">Artist name</p>
-                  <p class="m-0 d-md-inline">Album · <span>year</span></p>
+                  <!-- <p class="m-0 d-md-inline">Artist name</p> -->
+                  <!-- <p class="m-0 d-md-inline">Album · <span>year</span></p> -->
                 </div>
               </div>
             </div>
@@ -135,7 +184,9 @@
               </div>
             </div>
           </div>
+           </div>
           <div id="brani" class="row">
+            <h2 class='my-4'>popolari</h2>
             <!-- <div 
               class="col-12 border-bottom d-flex justify-content-between justify-content-lg-evenly align-items-center px-3 gap-4"
             >
