@@ -90,9 +90,6 @@ const getAlbum = function () {
           audioPlay(playerList, i)
         })
       }
-      // songRow.forEach((song, i) => {
-      //   song.addEventListener("click", audioPlay(playerList, i))
-      // })
       console.log(songRow)
       document.getElementById("artist").addEventListener("click", function () {
         window.location.href = `./artistPage.html?id=${data.artist.id}`
@@ -135,23 +132,27 @@ const audioPlay = function (arr, i) {
 
   document.querySelector("nav").appendChild(aTag)
 }
+// il cuore diventa verde al click
 document.getElementById("heart").addEventListener("click", function () {
   document.getElementById("heart").classList.toggle("bi-heart")
   document.getElementById("heart").classList.toggle("bi-heart-fill")
 })
+// si chiude la sezione amici al click
 document.getElementById("close").addEventListener("click", function () {
   document.getElementById("footer").classList.add("d-lg-none")
   document.querySelector("main").classList.add("flex-grow-1")
 })
+// mostro la seziona amici al click
 document.getElementById("amici").addEventListener("click", function name() {
   document.getElementById("footer").classList.remove("d-lg-none")
 })
+// link alla pagina search
 document
   .getElementsByClassName("bi-search ")[0]
   .addEventListener("click", function () {
     window.location.href = "./search.html"
   })
-
+// link alla pagina home
 document
   .getElementsByClassName("bi-house-door-fill")[0]
   .addEventListener("click", function () {
