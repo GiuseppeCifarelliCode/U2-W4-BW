@@ -4,7 +4,7 @@ const eventId = addressBarContent.get("id")
 let id = 75621062
 const playerList = []
 const getAlbum = function () {
-  fetch(myUrl + id)
+  fetch(myUrl + eventId)
     .then((res) => {
       if (res.ok) {
         return res.json()
@@ -102,7 +102,7 @@ const getAlbum = function () {
         sMP3.src = playerList[i]
         sMP3.type = "audio/mp3"
         aTag.classList.remove("d-none")
-        document.getElementById("top").appendChild(aTag)
+        document.getElementById("player").appendChild(aTag)
 
         songRow[i].addEventListener("click", function () {
           audioPlay(i)
@@ -127,7 +127,11 @@ document
 
 const audioPlay = function (n) {
   const allSong = document.querySelectorAll("audio")
+  document.getElementById("player").classList.remove("d-none")
   allSong.forEach((song, i) => {
+    song.addEventListener("ended", function () {
+      document.getElementById("player").classList.add("d-none")
+    })
     if (i === n) {
       song.classList.remove("d-none")
       song.play()
@@ -137,6 +141,7 @@ const audioPlay = function (n) {
     }
   })
 }
+
 // il cuore diventa verde al click
 document.getElementById("heart").addEventListener("click", function () {
   document.getElementById("heart").classList.toggle("bi-heart")
