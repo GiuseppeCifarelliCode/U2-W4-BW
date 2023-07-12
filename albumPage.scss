@@ -1,6 +1,6 @@
 @import "assets/scss/partials/color", "assets/scss/partials/header",
-  "assets/scss/partials/main", "assets/scss/partials/footer";
-
+  "assets/scss/partials/main", "assets/scss/partials/footer",
+  "assets/scss/partials/player";
 nav {
   background-color: rgba(0, 0, 0, 0.45);
 }
@@ -54,22 +54,22 @@ i:hover {
   overflow-y: scroll;
   max-height: 80vh;
 }
-audio::-webkit-media-controls-panel {
-  background-color: rgb(31, 31, 31);
-}
-audio::-webkit-media-controls-play-button {
-  background-color: #1fdf64;
-  border-radius: 50%;
-}
-audio::-webkit-media-controls-current-time-display {
-  color: white;
-}
-audio::-webkit-media-controls-time-remaining-display {
-  color: white;
-}
-audio::-webkit-media-controls-timeline-container {
-  color: white;
-}
+// audio::-webkit-media-controls-panel {
+//   background-color: rgb(31, 31, 31);
+// }
+// audio::-webkit-media-controls-play-button {
+//   background-color: #1fdf64;
+//   border-radius: 50%;
+// }
+// audio::-webkit-media-controls-current-time-display {
+//   color: white;
+// }
+// audio::-webkit-media-controls-time-remaining-display {
+//   color: white;
+// }
+// audio::-webkit-media-controls-timeline-container {
+//   color: white;
+// }
 
 #heart.bi-heart-fill {
   color: #1fdf64;
