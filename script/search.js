@@ -20,7 +20,7 @@ const searchGenerator = function (URL) {
           "justify-content-center"
         );
         col.innerHTML = `<div class="card w-100">
-   <img src=${element.album.cover_medium} class="card-img-top" alt="${element.title}">
+   <img src=${element.album.cover_medium} class="card-img-top" crossorigin="anonymous" alt="${element.title}">
    <div class="card-body d-flex flex-column justify-content-between">
      <h5 class="card-title">${element.title} </h5>
     <audio class="w-100"
@@ -36,16 +36,20 @@ const searchGenerator = function (URL) {
 
         riga.appendChild(col);
       });
+    })
+    .then(() => {
       const allImgCards = document.querySelectorAll(".card-img-top");
-      allImgCards.forEach((img) => {
+      const allCardsBody = document.querySelectorAll(".card-body");
+      allImgCards.forEach((img, i) => {
         let context = draw(img);
         let allColors = getColors(context);
-        console.log(allColors);
-        // let mostRecurrent = findMostRecurrentColor(allColors);
-        // let mostRecurrentHex = pad(mostRecurrent);
-        // console.log(mostRecurrentHex);
+        let mostRecurrent = findMostRecurrentColor(allColors);
+        let mostRecurrentHex = pad(mostRecurrent);
+        console.log(mostRecurrentHex);
+        allCardsBody[i].style.backgroundColor = "#" + mostRecurrentHex;
       });
     })
+
     .catch((err) => console.log(err));
 };
 
