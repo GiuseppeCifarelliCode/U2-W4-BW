@@ -146,3 +146,14 @@ document.getElementById("close").addEventListener("click", function () {
 document.getElementById("amici").addEventListener("click", function name() {
   document.getElementById("footer").classList.remove("d-lg-none")
 })
+document
+  .getElementsByClassName("bi-search ")[0]
+  .addEventListener("click", function () {
+    window.location.href = "./search.html"
+  })
+
+document
+  .getElementsByClassName("bi-house-door-fill")[0]
+  .addEventListener("click", function () {
+    window.location.href = "./index.html"
+  })
