@@ -13,7 +13,6 @@ const getAlbum = function () {
       }
     })
     .then((data) => {
-      console.log(data)
       document.getElementById("title").innerText = `${data.title}`
       document
         .getElementById("album-cover")
@@ -54,7 +53,6 @@ const getAlbum = function () {
         const seconds = time - minutes * 60
         const hours = Math.floor(time / 3600)
         time = time - hours * 3600
-        console.log(element)
         const newRow = document.createElement("div")
         newRow.classList.add(
           "row",
@@ -86,7 +84,6 @@ const getAlbum = function () {
             
       `
         document.getElementById("main").appendChild(newRow)
-        console.log(playerList)
       })
       let songRow = document.getElementsByClassName("song-row")
       for (let i = 0; i < songRow.length; i++) {
@@ -112,20 +109,20 @@ const getAlbum = function () {
           audioPlay(i)
         })
       }
-      for (let i = 0; i < songRow.length; i++) {
-        let aTag2 = document.createElement("audio")
-        aTag2.controls = true
-        aTag2.autoplay = false
-        let sMP3_2 = document.createElement("source")
-        sMP3_2.classList.add("source-mp3")
-        aTag2.appendChild(sMP3_2)
-        sMP3_2.src = playerList[i]
-        sMP3_2.type = "audio/mp3"
-        document.getElementById(`player${i}`).appendChild(aTag2)
-        // songRow[i].addEventListener("click", function () {
-        //   audioPlay2(i)
-        // })
-      }
+      // for (let i = 0; i < songRow.length; i++) {
+      //   let aTag2 = document.createElement("audio")
+      //   aTag2.controls = true
+      //   aTag2.autoplay = false
+      //   let sMP3_2 = document.createElement("source")
+      //   sMP3_2.classList.add("source-mp3")
+      //   aTag2.appendChild(sMP3_2)
+      //   sMP3_2.src = playerList[i]
+      //   sMP3_2.type = "audio/mp3"
+      //   document.getElementById(`player${i}`).appendChild(aTag2)
+      //   // songRow[i].addEventListener("click", function () {
+      //   //   audioPlay2(i)
+      //   // })
+      // }
       document.getElementById("artist").addEventListener("click", function () {
         window.location.href = `./artistPage.html?id=${data.artist.id}`
       })
