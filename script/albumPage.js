@@ -4,7 +4,7 @@ const eventId = addressBarContent.get("id")
 let id = 75621062
 const playerList = []
 const getAlbum = function () {
-  fetch(myUrl + eventId)
+  fetch(myUrl + id)
     .then((res) => {
       if (res.ok) {
         return res.json()
@@ -67,9 +67,14 @@ const getAlbum = function () {
         newRow.innerHTML = `
 
               <div class="d-none d-lg-flex col-1">${i + 1}</div>
-              <div class=" col flex-grow-1">
+              <div class=" col flex-grow-1 d-flex gap-2">
+              <div>
                 <p class="m-0 text-truncate">${element.title}</p>
                 <p class="m-0">${element.artist.name}</p>
+                </div>
+                <div id="player${i}" class="d-md-none d-flex justify-content-end flex-grow-1">
+                 
+                </div>
               </div>
               <div class="d-lg-none col-1">
                 <i class="bi bi-three-dots-vertical"></i>
@@ -86,6 +91,7 @@ const getAlbum = function () {
       let songRow = document.getElementsByClassName("song-row")
       for (let i = 0; i < songRow.length; i++) {
         let aTag = document.createElement("audio")
+        aTag.classList.add("desktop")
         aTag.controls = true
         aTag.autoplay = false
         aTag.classList.add(
@@ -101,14 +107,25 @@ const getAlbum = function () {
         aTag.appendChild(sMP3)
         sMP3.src = playerList[i]
         sMP3.type = "audio/mp3"
-        aTag.classList.remove("d-none")
         document.getElementById("player").appendChild(aTag)
-
         songRow[i].addEventListener("click", function () {
           audioPlay(i)
         })
       }
-      console.log(songRow)
+      for (let i = 0; i < songRow.length; i++) {
+        let aTag2 = document.createElement("audio")
+        aTag2.controls = true
+        aTag2.autoplay = false
+        let sMP3_2 = document.createElement("source")
+        sMP3_2.classList.add("source-mp3")
+        aTag2.appendChild(sMP3_2)
+        sMP3_2.src = playerList[i]
+        sMP3_2.type = "audio/mp3"
+        document.getElementById(`player${i}`).appendChild(aTag2)
+        // songRow[i].addEventListener("click", function () {
+        //   audioPlay2(i)
+        // })
+      }
       document.getElementById("artist").addEventListener("click", function () {
         window.location.href = `./artistPage.html?id=${data.artist.id}`
       })
@@ -126,7 +143,7 @@ document
   })
 
 const audioPlay = function (n) {
-  const allSong = document.querySelectorAll("audio")
+  const allSong = document.querySelectorAll("audio.desktop")
   document.getElementById("player").classList.remove("d-none")
   allSong.forEach((song, i) => {
     song.addEventListener("ended", function () {
@@ -141,6 +158,22 @@ const audioPlay = function (n) {
     }
   })
 }
+// const audioPlay2 = function (n) {
+//   const allSong = document.querySelectorAll("audio")
+//   document.getElementById("player").classList.remove("d-none")
+//   allSong.forEach((song, i) => {
+//     song.addEventListener("ended", function () {
+//       document.getElementById("player").classList.add("d-none")
+//     })
+//     if (i === n) {
+//       song.classList.remove("d-none")
+//       song.play()
+//     } else {
+//       song.classList.add("d-none")
+//       song.pause()
+//     }
+//   })
+// }
 
 // il cuore diventa verde al click
 document.getElementById("heart").addEventListener("click", function () {
