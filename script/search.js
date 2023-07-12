@@ -36,18 +36,22 @@ const searchGenerator = function (URL) {
 
         riga.appendChild(col);
       });
-    })
-    .then(() => {
-      const allImgCards = document.querySelectorAll(".card-img-top");
-      const allCardsBody = document.querySelectorAll(".card-body");
-      allImgCards.forEach((img, i) => {
-        let context = draw(img);
-        let allColors = getColors(context);
-        let mostRecurrent = findMostRecurrentColor(allColors);
-        let mostRecurrentHex = pad(mostRecurrent);
-        console.log(mostRecurrentHex);
-        allCardsBody[i].style.backgroundColor = "#" + mostRecurrentHex;
-      });
+      // const allImgCards = document.querySelectorAll(".card-img-top");
+      // const allCardsBody = document.querySelectorAll(".card-body");
+      // const allCardsTitle = document.querySelectorAll(".card-title");
+      // allImgCards.forEach((img, i) => {
+      //   let context = draw(img);
+      //   let allColors = getColors(context);
+      //   let mostRecurrent = findMostRecurrentColor(allColors);
+      //   let mostRecurrentHex = pad(mostRecurrent);
+      //   console.log(mostRecurrentHex);
+      //   allCardsBody[i].style.backgroundColor = "#" + mostRecurrentHex;
+      //   allCardsBody[i].style.filter = "invert(100%)";
+      //   const invertColor = allCardsBody[i].style.backgroundColor;
+      //   allCardsBody[i].style.backgroundColor = "#" + mostRecurrentHex;
+      //   console.log(invertColor, "here");
+      //   allCardsTitle[i].style.color = invertColor;
+      // });
     })
 
     .catch((err) => console.log(err));
