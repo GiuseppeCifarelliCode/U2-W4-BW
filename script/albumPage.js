@@ -128,3 +128,6 @@ document.getElementById("close").addEventListener("click", function () {
   document.getElementById("footer").classList.add("d-lg-none")
   document.querySelector("main").classList.add("flex-grow-1")
 })
+document.getElementById("amici").addEventListener("click", function name() {
+  document.getElementById("footer").classList.remove("d-lg-none")
+})
