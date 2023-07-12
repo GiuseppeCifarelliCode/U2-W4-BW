@@ -67,9 +67,14 @@ const getAlbum = function () {
         newRow.innerHTML = `
 
               <div class="d-none d-lg-flex col-1">${i + 1}</div>
-              <div class=" col flex-grow-1">
+              <div class=" col flex-grow-1 d-flex gap-2">
+              <div>
                 <p class="m-0 text-truncate">${element.title}</p>
                 <p class="m-0">${element.artist.name}</p>
+                </div>
+                <div id="player${i}">
+                 player
+                </div>
               </div>
               <div class="d-lg-none col-1">
                 <i class="bi bi-three-dots-vertical"></i>
@@ -101,9 +106,7 @@ const getAlbum = function () {
         aTag.appendChild(sMP3)
         sMP3.src = playerList[i]
         sMP3.type = "audio/mp3"
-        aTag.classList.remove("d-none")
         document.getElementById("player").appendChild(aTag)
-
         songRow[i].addEventListener("click", function () {
           audioPlay(i)
         })
