@@ -147,8 +147,7 @@ i:hover {
 }
 
 audio::-webkit-media-controls-panel {
-  background-color: rgba(31, 31, 31, 0.902);
-  color: white;
+  background-color: rgb(31, 31, 31);
 }
 
 audio::-webkit-media-controls-play-button {
