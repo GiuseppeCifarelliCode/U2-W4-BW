@@ -7,7 +7,7 @@ const playerList = [];
 
 
 const ricerca = function () {
-  fetch(URL +id)
+  fetch(URL +eventId)
     .then((res) => {
       if (res.ok) {
         console.log(res);
