@@ -76,6 +76,19 @@ const ricerca = function () {
               audioPlay(playerList, i);
             });
           }
+
+          document.getElementById("home").addEventListener("click", function () {
+            window.location.href = ' ./index.html'
+          })
+
+
+          document.getElementById("cerca").addEventListener("click", function () {
+            window.location.href = ' ./search.html'
+          })
+
+          
+
+          
         });
     })
     .catch((err) => {
