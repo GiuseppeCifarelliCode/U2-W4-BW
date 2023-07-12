@@ -20,7 +20,9 @@ const searchGenerator = function (URL) {
           "justify-content-center"
         );
         col.innerHTML = `<div class="card w-100">
+        <a href="./albumPage.html?id=${element.album.id}">
    <img src=${element.album.cover_medium} class="card-img-top" crossorigin="anonymous" alt="${element.title}">
+   </a>
    <div class="card-body d-flex flex-column justify-content-between">
      <h5 class="card-title">${element.title} </h5>
     <audio class="w-100"

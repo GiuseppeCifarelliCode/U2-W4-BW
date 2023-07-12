@@ -7,7 +7,7 @@ const playerList = [];
 
 
 const ricerca = function () {
-  fetch(URL + id)
+  fetch(URL +eventId)
     .then((res) => {
       if (res.ok) {
         console.log(res);
@@ -94,7 +94,11 @@ let aTag = document.createElement("audio");
 aTag.id = "play";
 aTag.controls = true;
 aTag.autoplay = true;
-aTag.classList.add("d-none");
+aTag.classList.add("d-none","position-fixed",
+"bottom-0",
+"start-50",
+"translate-middle-x",
+"w-50");
 let sMP3 = document.createElement("source");
 sMP3.classList.add("source-mp3");
 aTag.appendChild(sMP3);

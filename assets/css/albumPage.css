@@ -170,4 +170,8 @@ audio::-webkit-media-controls-timeline-container {
 
 #heart.bi-heart-fill {
   color: #1fdf64;
+}
+
+#artist:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=albumPage.css.map */
