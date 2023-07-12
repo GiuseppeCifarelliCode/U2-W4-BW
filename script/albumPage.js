@@ -1,4 +1,6 @@
 const myUrl = "https://striveschool-api.herokuapp.com/api/deezer/album/"
+const addressBarContent = new URLSearchParams(location.search)
+const eventId = addressBarContent.get("id")
 let id = 75621062
 const playerList = []
 const getAlbum = function () {
@@ -81,6 +83,7 @@ const getAlbum = function () {
       let songRow = document.getElementsByClassName("song-row")
       for (let i = 0; i < songRow.length; i++) {
         songRow[i].addEventListener("click", function () {
+          refreshPlayer()
           audioPlay(playerList, i)
         })
       }
@@ -105,14 +108,17 @@ aTag.id = "play"
 aTag.controls = true
 aTag.autoplay = true
 aTag.classList.add("d-none")
+let sMP3 = document.createElement("source")
+sMP3.classList.add("source-mp3")
+aTag.appendChild(sMP3)
 document.getElementById("top").appendChild(aTag)
+const refreshPlayer = function (src) {
+  sMP3.src = ""
+}
 const audioPlay = function (arr, i) {
-  let sMP3 = document.createElement("source")
-  sMP3.classList.add("source-mp3", "text-center")
-  sMP3.src = playerList[i]
+  sMP3.src = arr[i]
   sMP3.type = "audio/mp3"
   aTag.classList.remove("d-none")
-  aTag.appendChild(sMP3)
 
   document.querySelector("nav").appendChild(aTag)
 }
@@ -123,4 +129,7 @@ document.getElementById("heart").addEventListener("click", function () {
 document.getElementById("close").addEventListener("click", function () {
   document.getElementById("footer").classList.add("d-lg-none")
   document.querySelector("main").classList.add("flex-grow-1")
+})
+document.getElementById("amici").addEventListener("click", function name() {
+  document.getElementById("footer").classList.remove("d-lg-none")
 })

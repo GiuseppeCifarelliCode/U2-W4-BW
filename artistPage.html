@@ -19,11 +19,13 @@
   <body class="p-2">
     <div class="container-fluid">
       <div class="row row-cols-md-3">
-        <header class="col col-12 col-md-3 mt-3 mt-md-0">
-          <nav class="d-flex justify-content-evenly fixed-bottom mb-3 mb-md-0">
+        <header class="col col-12 col-md-2 mt-2 mt-md-0">
+          <nav
+            class="d-flex justify-content-evenly fixed-bottom mb-3 mb-md-0 py-2 bg-black p-3 opacity-75"
+          >
             <i class="bi bi-three-dots d-none d-md-block my-md-2"></i>
             <i
-              class="bi bi-house-door-fill my-md-2 d-md-inline d-flex flex-md-column align-items-center"
+              class="bi bi-house-door-fill my-md-2 d-md-inline d-flex flex-column align-items-center"
               ><span class="d-block d-md-inline ms-md-3">Home</span></i
             >
             <i
@@ -36,23 +38,61 @@
                 >La tua libreria</span
               ></i
             >
-          </nav>
-          <div
-            class="d-flex justify-content-between flex-md-column align-items-center d-none"
-          >
-            <div><h3>Buonasera</h3></div>
-            <div class="d-flex justify-content-evenly">
-              <i class="bi bi-bell me-4 position-relative">
-                <span
-                  class="position-absolute top-0 start-0 translate-middle p-1 bg-primary border border-light rounded-circle"
-                >
-                </span>
-              </i>
-
-              <i class="bi bi-clock-history me-4"></i>
-              <i class="bi bi-gear"></i>
+            <div class="d-none d-lg-flex flex-column mt-3">
+              <i
+                class="bi bi-plus-square my-md-2 d-md-inline d-flex flex-column align-items-center"
+                ><span class="d-block d-md-inline ms-md-3"
+                  >Crea playlist</span
+                ></i
+              >
+              <i
+                class="bi bi-heart-fill my-md-2 d-md-inline d-flex flex-column align-items-center"
+                ><span class="d-block d-md-inline ms-md-3"
+                  >Brani che ti piacciono</span
+                ></i
+              >
+              <i
+                class="bi bi-bookmark-fill my-md-2 d-md-inline d-flex flex-column align-items-center"
+                ><span class="d-block d-md-inline ms-md-3"
+                  >I tuoi episodi</span
+                ></i
+              >
             </div>
-          </div>
+            <div id="playlist" class="d-none d-lg-flex flex-column border-top">
+              <ul>
+                <li>prima</li>
+                <li>seconda</li>
+                <li>terza</li>
+                <li>quarta</li>
+                <li>quinta</li>
+                <li>sesta</li>
+                <li>settima</li>
+                <li>ottava</li>
+                <li>nona</li>
+                <li>decima</li>
+                <li>prima</li>
+                <li>seconda</li>
+                <li>terza</li>
+                <li>quarta</li>
+                <li>quinta</li>
+                <li>sesta</li>
+                <li>settima</li>
+                <li>ottava</li>
+                <li>nona</li>
+                <li>decima</li>
+                <li>prima</li>
+                <li>seconda</li>
+                <li>terza</li>
+                <li>quarta</li>
+                <li>quinta</li>
+                <li>sesta</li>
+                <li>settima</li>
+                <li>ottava</li>
+                <li>nona</li>
+                <li>decima</li>
+              </ul>
+            </div>
+          </nav>
         </header>
         <main class="col col-12 col-md-7 bg-warning">
           <div class="row row-cols-1 row-cols-lg-2">
@@ -182,8 +222,84 @@
               </div>
             </div>
           </div> -->
+          
         </main>
-        <footer class="col col-12 col-md-2 bg-white">FOOTER</footer>
+        <footer
+        id="footer"
+        class="col col-12 col-md-2 bg-black flex-column mt-2 px-3 d-none d-lg-flex"
+      >
+        <div class="d-flex align-items-center justify-content-between">
+          <p class="m-0 h6">Attività amici</p>
+          <div>
+            <i class="bi bi-person-plus-fill fs-5"></i>
+            <i id="close" class="bi bi-x-lg fs-5"></i>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between mt-4">
+          <div class="d-flex align-items-start">
+            <img
+              src="./assets/imgs/main/image-16.jpg"
+              alt="pic"
+              width="25px"
+              class="rounded-circle"
+            />
+          </div>
+          <div class="d-flex flex-column">
+            <h4 class="m-0">Nome amico</h4>
+            <small class="m0">brano in play · Artist</small>
+            <p class="m0">
+              <i class="bi bi-music-note-beamed fs-6">
+                <small>Album</small></i
+              >
+            </p>
+          </div>
+          <div>
+            <small class="m-0">2 ore fa</small>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between mt-4">
+          <div class="d-flex align-items-start">
+            <img
+              src="./assets/imgs/main/image-16.jpg"
+              alt="pic"
+              width="25px"
+              class="rounded-circle"
+            />
+          </div>
+          <div class="d-flex flex-column">
+            <h4 class="m-0">Nome amico</h4>
+            <small class="m0">brano in play · Artist</small>
+            <p class="m0">
+              <i class="bi bi-music-note-beamed fs-6">
+                <small>Album</small></i
+              >
+            </p>
+          </div>
+          <div>
+            <small class="m-0">2 ore fa</small>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between mt-4">
+          <div class="d-flex align-items-start">
+            <img
+              src="./assets/imgs/main/image-16.jpg"
+              alt="pic"
+              width="25px"
+              class="rounded-circle"
+            />
+          </div>
+          <div class="d-flex flex-column">
+            <h4 class="m-0">Nome amico</h4>
+            <small class="m0">brano in play · Artist</small>
+            <p class="m0">
+              <i class="bi bi-vinyl fs-6"> <small>Album</small></i>
+            </p>
+          </div>
+          <div>
+            <small class="m-0">2 ore fa</small>
+          </div>
+        </div>
+      </footer>
       </div>
     </div>
     <script src="script/artist.js"></script>
