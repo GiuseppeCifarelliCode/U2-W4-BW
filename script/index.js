@@ -19,40 +19,24 @@ col.forEach((col, i) => {
       .then((data) => {
         let newdata = data.data;
         console.log(newdata);
-        let container=document.createElement('div')
-          container.classList.add('container')
-        let rowalbum = document.createElement("div");
-        rowalbum.classList.add("row");
-        newdata.forEach((el) => {
-          console.log(el)
-          
-          document.querySelector("article").classList.add("d-none");
-          document.querySelector("aside").classList.add("d-none");
-          
-          let colalbum = document.createElement("div");
-          colalbum.classList.add("col", "col-3","d-flex");
-          let card = document.createElement("div")
-          card.classList.add('cardAlbum');
-          card.innerHTML=`<div class="card" style="width:8rem height:10rem">
-          <img src="${el.album.cover_small}" class="card-img-top"  alt="...">
-          <div class="card-body">
-            <h5 class="card-text text-dark">${el.title}</h5>
-            <p class="card-text text-dark">${el.artist.name}</p>
-          </div>
-        </div>`
-        
-        
-        document.querySelector('main').appendChild(container).appendChild(rowalbum).appendChild(colalbum).appendChild(card)
-        });
+        newdata.forEach((el)=>{
+        console.log(`${el.album.id}`)
+        window.location.href=`albumPage.html?id=${el.album.id}`
+
+        })
+        })
+       
        
 
-      })
+      
 
       .catch((err) => {
         console.log(err);
       });
   });
-});
+})
+  
+
 
 
 
