@@ -85,9 +85,27 @@ const getAlbum = function () {
       })
       let songRow = document.getElementsByClassName("song-row")
       for (let i = 0; i < songRow.length; i++) {
+        let aTag = document.createElement("audio")
+        aTag.controls = true
+        aTag.autoplay = false
+        aTag.classList.add(
+          "d-none",
+          "position-fixed",
+          "bottom-0",
+          "start-50",
+          "translate-middle-x",
+          "w-50"
+        )
+        let sMP3 = document.createElement("source")
+        sMP3.classList.add("source-mp3")
+        aTag.appendChild(sMP3)
+        sMP3.src = playerList[i]
+        sMP3.type = "audio/mp3"
+        aTag.classList.remove("d-none")
+        document.getElementById("top").appendChild(aTag)
+
         songRow[i].addEventListener("click", function () {
-          refreshPlayer()
-          audioPlay(playerList, i)
+          audioPlay(i)
         })
       }
       console.log(songRow)
@@ -106,40 +124,42 @@ document
   .addEventListener("click", function () {
     window.location.href = "./index.html"
   })
-let aTag = document.createElement("audio")
-aTag.id = "play"
-aTag.controls = true
-aTag.autoplay = true
-aTag.classList.add(
-  "d-none",
-  "position-fixed",
-  "bottom-0",
-  "start-50",
-  "translate-middle-x",
-  "w-50"
-)
-let sMP3 = document.createElement("source")
-sMP3.classList.add("source-mp3")
-aTag.appendChild(sMP3)
-document.getElementById("top").appendChild(aTag)
-const refreshPlayer = function (src) {
-  sMP3.src = ""
-}
-const audioPlay = function (arr, i) {
-  sMP3.src = arr[i]
-  sMP3.type = "audio/mp3"
-  aTag.classList.remove("d-none")
 
-  document.querySelector("nav").appendChild(aTag)
+const audioPlay = function (n) {
+  const allSong = document.querySelectorAll("audio")
+  allSong.forEach((song, i) => {
+    if (i === n) {
+      song.classList.remove("d-none")
+      song.play()
+    } else {
+      song.classList.add("d-none")
+      song.pause()
+    }
+  })
 }
+// il cuore diventa verde al click
 document.getElementById("heart").addEventListener("click", function () {
   document.getElementById("heart").classList.toggle("bi-heart")
   document.getElementById("heart").classList.toggle("bi-heart-fill")
 })
+// si chiude la sezione amici al click
 document.getElementById("close").addEventListener("click", function () {
   document.getElementById("footer").classList.add("d-lg-none")
   document.querySelector("main").classList.add("flex-grow-1")
 })
+// mostro la seziona amici al click
 document.getElementById("amici").addEventListener("click", function name() {
   document.getElementById("footer").classList.remove("d-lg-none")
 })
+// link alla pagina search
+document
+  .getElementsByClassName("bi-search ")[0]
+  .addEventListener("click", function () {
+    window.location.href = "./search.html"
+  })
+// link alla pagina home
+document
+  .getElementsByClassName("bi-house-door-fill")[0]
+  .addEventListener("click", function () {
+    window.location.href = "./index.html"
+  })
