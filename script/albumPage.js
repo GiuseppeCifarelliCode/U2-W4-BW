@@ -4,7 +4,7 @@ const eventId = addressBarContent.get("id")
 let id = 75621062
 const playerList = []
 const getAlbum = function () {
-  fetch(myUrl + eventId)
+  fetch(myUrl + id)
     .then((res) => {
       if (res.ok) {
         return res.json()
