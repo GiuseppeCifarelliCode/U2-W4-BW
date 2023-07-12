@@ -28,7 +28,7 @@ const getAlbum = function () {
       document.getElementById("spinner").classList.add("d-none");
       document.getElementById("head-album").classList.remove("d-none");
       document.getElementById("album-info").innerHTML = ` 
-                      <div>
+                      <div id='artist'>
                       <p class="m-0">
                       <img
                       src=${data.artist.picture_small}
@@ -94,6 +94,9 @@ const getAlbum = function () {
       //   song.addEventListener("click", audioPlay(playerList, i))
       // })
       console.log(songRow);
+      document.getElementById("artist").addEventListener("click", function () {
+        window.location.href = `./artistPage.html?id=${data.artist.id}`;
+      });
     })
 
     .catch((err) => {
