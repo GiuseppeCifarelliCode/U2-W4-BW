@@ -17,12 +17,20 @@ const ricerca = function () {
       }
     })
     .then((data) => {
+      console.log(data)
       console.log(data.tracklist);
-    
+       let fan=document.querySelector('.fan')
+       fan.innerText=`${data.nb_fan
+       }`
       let nome = document.getElementById("nome");
       nome.innerText = `${data.name}`;
-      let immagine = document.getElementById("album-cover");
-      immagine.setAttribute("src", `${data.picture_medium}`);
+      let back=document.getElementById('back')
+      back.style.backgroundImage=`url( ${data.picture_xl} )`
+      back.style.backgroundSize='cover'
+      back.style.height= '500px'
+      back.style.backgroundRepeat='no-repeat'
+    
+      
       let x = data.tracklist;
       console.log(x);
       fetch(x)
