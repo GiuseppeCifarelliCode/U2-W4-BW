@@ -88,7 +88,7 @@ const ricerca = function () {
             sMP3.src = playerList[i]
             sMP3.type = "audio/mp3"
             aTag.classList.remove("d-none")
-            document.getElementById("top").appendChild(aTag)
+            document.getElementById("player").appendChild(aTag)
     
             songRow[i].addEventListener("click", function () {
               audioPlay(i)
@@ -120,6 +120,9 @@ const audioPlay = function (n) {
   const allSong = document.querySelectorAll("audio")
   document.getElementById("player").classList.remove("d-none")
   allSong.forEach((song, i) => {
+    song.addEventListener("ended", function () {
+      document.getElementById("player").classList.add("d-none")
+    })
     if (i === n) {
       song.classList.remove("d-none")
       song.play()
