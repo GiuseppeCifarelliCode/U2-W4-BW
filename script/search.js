@@ -92,3 +92,19 @@ allImgCards.forEach((img) => {
     );
   });
 });
+
+const populatePlaylist = function () {
+  const playlist = JSON.parse(localStorage.getItem("playlist"));
+  if (playlist) {
+    playlist.forEach((track) => {
+      const newLi = document.createElement("li");
+      newLi.classList.add("m-2");
+      newLi.innerText = track;
+      document.getElementById("list").appendChild(newLi);
+    });
+  } else {
+    const playlist = [];
+    localStorage.setItem("playlist", JSON.stringify(playlist));
+  }
+};
+populatePlaylist();
