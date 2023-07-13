@@ -15,76 +15,138 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
   </head>
   <body class="p-2">
     <div class="container-fluid">
       <div class="row row-cols-md-3">
         <header class="col col-12 col-md-2 mt-3 mt-md-0">
           <nav
-            class="d-flex justify-content-evenly fixed-bottom mb-md-0 text-bg-dark p-3 opacity-75"
+            class="d-flex justify-content-evenly fixed-bottom bg-black pt-1 opacity-75 mb-md-0"
           >
-            <i class="bi bi-three-dots d-none d-md-block my-md-2"></i>
-            <i
-              class="bi bi-house-door-fill my-md-2 d-md-inline d-flex flex-column align-items-center"
-              ><span class="d-block d-md-inline ms-md-3">Home</span></i
+            <ul
+              class="navbar-nav me-auto mb-lg-0 d-flex flex-row w-100 justify-content-evenly flex-md-column"
             >
-            <i
-              class="bi bi-search my-md-2 d-md-inline d-flex flex-column align-items-center"
-              ><span class="d-block d-md-inline ms-md-3">Cerca</span></i
+              <li class="nav-item d-none d-md-block">
+                <a class="nav-link" aria-current="page" href="#"
+                  ><i class="bi bi-three-dots m-md-2"></i
+                ></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">
+                  <i
+                    class="bi bi-house-door-fill m-md-2 d-md-inline d-flex flex-column align-items-center"
+                  ></i
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="search.html"
+                  ><i
+                    class="bi bi-search m-md-2 d-md-inline d-flex flex-column align-items-center"
+                  ></i
+                  >Cerca</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i
+                    class="bi bi-collection m-md-2 d-md-inline d-flex flex-column align-items-center"
+                  ></i
+                  >La tua libreria</a
+                >
+              </li>
+            </ul>
+            <ul
+              class="navbar-nav me-auto mb-lg-0 flex-row w-100 justify-content-evenly flex-md-column mt-4 d-none d-lg-flex border-bottom"
             >
-            <i
-              class="bi bi-collection my-md-2 d-md-inline d-flex flex-column align-items-center"
-              ><span class="d-block d-md-inline ms-md-3"
-                >La tua libreria</span
-              ></i
-            >
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">
+                  <i
+                    class="bi bi-plus-square-fill m-md-2 d-md-inline d-flex flex-column align-items-center"
+                  ></i
+                  >Crea playlist</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="search.html"
+                  ><i
+                    class="bi bi-heart-fill m-md-2 d-md-inline d-flex flex-column align-items-center"
+                  ></i
+                  >Brani che ti piacciono</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i
+                    class="bi bi-bookmark-fill m-md-2 d-md-inline d-flex flex-column align-items-center"
+                  ></i
+                  >I tuoi episodi</a
+                >
+              </li>
+            </ul>
           </nav>
         </header>
-        <main class="col col-12 col-md-9">
-          <div class="row mt-2 d-none d-md-flex">
-            <div class="col">
-              <i
-                class="bi bi-arrow-left-short btprofile rounded-pill me-3 px-2"
-              ></i
-              ><i
-                class="bi bi-arrow-right-short btprofile rounded-pill px-2"
-              ></i>
-            </div>
-            <div class="col d-flex justify-content-end">
-              <div class="dropdown">
-                <button
-                  class="btn border-black text-secondary dropdown-toggle text-truncate btprofile rounded-pill"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
+        <main class="col col-12 col-md-8">
+          <div
+            id="top"
+            class="row justify-content-center align-items-center flex-column flex-lg-row shadow-lg"
+          >
+            <div class="col-12 d-none d-md-flex my-3 justify-content-between">
+              <div class="d-flex">
+                <p
+                  class="m-0 bg-dark chevron d-flex justify-content-center align-items-center"
                 >
-                  <img
-                    class="rounded-pill"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXKRCmU5jTY9FaOb1VjvdvpoeAE-OpTJJOaw&usqp=CAU"
-                    alt=""
-                  />
-                  Il mio profilo
-                </button>
-                <ul class="dropdown-menu bg-dark">
-                  <li>
-                    <a class="dropdown-item text-white" href="#"
-                      >Cosa ascolto?</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item text-white" href="#">Playlist</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item text-white" href="#"
-                      >Modifica profilo</a
-                    >
-                  </li>
-                </ul>
+                  <i class="bi bi-chevron-left"></i>
+                </p>
+                <p
+                  class="m-0 bg-dark chevron d-flex justify-content-center align-items-center"
+                >
+                  <i class="bi bi-chevron-right"></i>
+                </p>
+              </div>
+              <div>
+                <div class="dropdown">
+                  <button
+                    class="btn btn-dark dropdown-toggle rounded-pill"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src="./assets/imgs/main/image-14.jpg"
+                      width="20px"
+                      alt="profile pic"
+                      class="rounded-circle"
+                    />
+                    Nome utente
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li>
+                      <a class="dropdown-item active" href="#">Profilo</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Le mie playlist</a>
+                    </li>
+                    <li>
+                      <a id="amici" class="dropdown-item" href="#"
+                        >Attività amici</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Log-out</a>
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
           <!--  Riga principale desktop-->
-          <div class="row d-none d-md-block my-md-4">
+          <div class="row d-none d-md-block mb-md-4 rw">
             <div class="col col-12">
               <div class="card mb-3 text-white p-4 bgViola">
                 <div class="row g-0">
@@ -110,7 +172,7 @@
                         </button>
                         <button
                           type="button"
-                          class="btn btn-outline-dark text-white rounded-pill px-5 me-2"
+                          class="btn btn-outline-dark text-white rounded-pill px-5 me-2 save"
                         >
                           Salva
                         </button>
@@ -135,7 +197,7 @@
           <div
             class="d-flex justify-content-between flex-md-column align-items-center align-items-md-start my-2"
           >
-            <div><h3>Trending del momento</h3></div>
+            <div><h3 class="h3">Trending del momento</h3></div>
             <div class="d-flex justify-content-evenly d-md-none">
               <i class="bi bi-bell me-4 position-relative">
                 <span
@@ -227,9 +289,10 @@
                       </div>
                       <div class="col col-6 col-md-8">
                         <div class="card-body p-2">
-                          <p class="card-title fw-bold text-truncate name">
+                          <p class="card-title fw-bold text-truncate name m-0">
                             Ligabue
                           </p>
+                          <small>(Made in Italy)</small>
                         </div>
                       </div>
                     </div>
@@ -278,7 +341,8 @@
                       </div>
                       <div class="col col-6 col-md-8">
                         <div class="card-body p-2">
-                          <p class="card-title fw-bold name">Maneskin</p>
+                          <p class="card-title fw-bold name m-0">Maneskin</p>
+                          <small>(Teatro d'ira vol-I)</small>
                         </div>
                       </div>
                     </div>
@@ -399,11 +463,6 @@
 
           <!-- parte finale Main -->
           <aside>
-            <div class="justify-content-between d-none d-md-flex remove">
-              <h5>Altro di cio che ti piace</h5>
-              <p>mostra tutto</p>
-            </div>
-
             <div class="container radiu d-md-none remove">
               <!-- prima card-music mobile -->
               <div class="row radiu">
@@ -534,81 +593,185 @@
             </div>
             <!-- fine seconda card music -->
 
-            <!-- row desktop -->
-            <div class="container d-none d-md-flex remove">
-              <div class="row row-cols-5 justify-content-between">
-                <div class="col col-2 p-0">
-                  <div class="card h-100">
-                    <img
-                      src="./assets/imgs/main/image-19.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Hot hits Italia</h5>
-                      <p class="card-text">
-                        La classifica piu calda del momento
-                      </p>
-                    </div>
+            <!-- card prova -->
+            <div class="container">
+              <div
+                class="row d-none d-md-flex justify-content-md-around justify-content-lg-between"
+              >
+                <h3 class="mb-0 mt-2">Il meglio delle nostre Playlist</h3>
+
+                <div class="col col-4 col-lg-3 cardV p-0">
+                  <div
+                    class="overlayer d-flex justify-content-center align-items-center"
+                  >
+                    <i class="bi bi-play-circle fs-1"></i>
                   </div>
+                  <img src="./assets/imgs/main/image-7.jpg" alt="" />
                 </div>
-                <div class="col col-2 p-0">
-                  <div class="card h-100">
-                    <img
-                      src="./assets/imgs/main/image-18.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Big on the internet</h5>
-                      <p class="card-text">reykik.</p>
-                    </div>
+
+                <div class="col col-4 col-lg-3 cardV p-0">
+                  <div
+                    class="overlayer d-flex justify-content-center align-items-center"
+                  >
+                    <i class="bi bi-play-circle fs-1"></i>
                   </div>
+                  <img src="./assets/imgs/main/image-4.jpg" alt="" />
                 </div>
-                <div class="col col-2 p-0">
-                  <div class="card h-100">
-                    <img
-                      src="./assets/imgs/main/image-13.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Pop Rising</h5>
-                      <p class="card-text">The hits on temporary.</p>
-                    </div>
+
+                <div class="col col-4 col-lg-3 cardV p-0">
+                  <div
+                    class="overlayer d-flex justify-content-center align-items-center"
+                  >
+                    <i class="bi bi-play-circle fs-1"></i>
                   </div>
+                  <img src="./assets/imgs/main/image-8.jpg" alt="" />
                 </div>
-                <div class="col col-2 p-0">
-                  <div class="card h-100">
-                    <img
-                      src="./assets/imgs/main/image-12.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">In Tendenza</h5>
-                      <p class="card-text">Hit del momento.</p>
-                    </div>
+
+                <div class="col col-4 col-lg-3 cardV p-0">
+                  <div
+                    class="overlayer d-flex justify-content-center align-items-center"
+                  >
+                    <i class="bi bi-play-circle fs-1"></i>
                   </div>
+                  <img src="./assets/imgs/main/image-6.jpg" alt="" />
                 </div>
-                <div class="col col-2 p-0">
-                  <div class="card h-100">
-                    <img
-                      src="./assets/imgs/main/image-10.jpg"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Canzoni Tristi</h5>
-                      <p class="card-text">It's ok but not to be ok.</p>
-                    </div>
+
+                <div class="col col-4 col-lg-3 cardV p-0">
+                  <div
+                    class="overlayer d-flex justify-content-center align-items-center"
+                  >
+                    <i class="bi bi-play-circle fs-1"></i>
                   </div>
+                  <img src="./assets/imgs/main/image-19.jpg" alt="" />
+                </div>
+
+                <div class="col col-4 col-lg-3 cardV p-0">
+                  <div
+                    class="overlayer d-flex justify-content-center align-items-center"
+                  >
+                    <i class="bi bi-play-circle fs-1"></i>
+                  </div>
+                  <img
+                    src="https://i.pinimg.com/736x/cf/74/03/cf74032199d378808402329b3765ac72--music-albums-in-color.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <div class="col col-4 col-lg-3 cardV p-0">
+                  <div
+                    class="overlayer d-flex justify-content-center align-items-center"
+                  >
+                    <i class="bi bi-play-circle fs-1"></i>
+                  </div>
+                  <img src="./assets/imgs/main/image-16.jpg" alt="" />
+                </div>
+
+                <div class="col col-4 col-lg-3 cardV p-0">
+                  <div
+                    class="overlayer d-flex justify-content-center align-items-center"
+                  >
+                    <i class="bi bi-play-circle fs-1"></i>
+                  </div>
+                  <img src="./assets/imgs/main/image-5.jpg" alt="" />
                 </div>
               </div>
             </div>
+            <!-- fine card prova -->
           </aside>
         </main>
-        <footer class="col col-12 col-md-1 bg-black">FOOTER</footer>
+        <footer
+          id="footer"
+          class="col col-12 col-md-2 bg-black flex-column mt-2 px-3 d-none d-lg-flex"
+        >
+          <div class="d-flex align-items-center justify-content-between">
+            <p class="m-0 h6">Attività amici</p>
+            <div>
+              <i class="bi bi-person-plus-fill fs-5"></i>
+              <i id="close" class="bi bi-x-lg fs-5"></i>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between mt-4">
+            <div class="d-flex align-items-start">
+              <img
+                src="./assets/imgs/main/image-16.jpg"
+                alt="pic"
+                width="25px"
+                class="rounded-circle"
+              />
+            </div>
+            <div class="d-flex flex-column">
+              <h4 class="m-0">Nome amico</h4>
+              <small class="m0">brano in play · Artist</small>
+              <p class="m0">
+                <i class="bi bi-music-note-beamed fs-6">
+                  <small>Album</small></i
+                >
+              </p>
+            </div>
+            <div>
+              <small class="m-0">2 ore fa</small>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between mt-4">
+            <div class="d-flex align-items-start">
+              <img
+                src="./assets/imgs/main/image-16.jpg"
+                alt="pic"
+                width="25px"
+                class="rounded-circle"
+              />
+            </div>
+            <div class="d-flex flex-column">
+              <h4 class="m-0">Nome amico</h4>
+              <small class="m0">brano in play · Artist</small>
+              <p class="m0">
+                <i class="bi bi-music-note-beamed fs-6">
+                  <small>Album</small></i
+                >
+              </p>
+            </div>
+            <div>
+              <small class="m-0">2 ore fa</small>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between mt-4">
+            <div class="d-flex align-items-start">
+              <img
+                src="./assets/imgs/main/image-16.jpg"
+                alt="pic"
+                width="25px"
+                class="rounded-circle"
+              />
+            </div>
+            <div class="d-flex flex-column">
+              <h4 class="m-0">Nome amico</h4>
+              <small class="m0">brano in play · Artist</small>
+              <p class="m0">
+                <i class="bi bi-vinyl fs-6"> <small>Album</small></i>
+              </p>
+            </div>
+            <div>
+              <small class="m-0">2 ore fa</small>
+            </div>
+          </div>
+        </footer>
+        <div id="player" class="text-white"></div>
+        <div
+          class="header-cardA w-100 p-3 d-none d-md-flex justify-content-between align-items-center"
+        >
+          <div>
+            <h6>Anteprima di spotify</h6>
+            <p>
+              Iscriviti per ricevere brani e podcast illimitati con annunci
+              pubblicitari occasionali.Non è necessaria nessuna carta di credito
+            </p>
+          </div>
+          <div>
+            <button type="button" class="btn btn-light rounded-pill px-5">
+              Accedi
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
