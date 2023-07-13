@@ -1,3 +1,5 @@
+const spinnerContainer = document.querySelector(".spinner-container");
+
 const searchGenerator = function (URL) {
   fetch(URL)
     .then((res) => {
@@ -38,6 +40,7 @@ const searchGenerator = function (URL) {
 
         riga.appendChild(col);
       });
+      spinnerContainer.classList.add("d-none");
       // const allImgCards = document.querySelectorAll(".card-img-top");
       // const allCardsBody = document.querySelectorAll(".card-body");
       // const allCardsTitle = document.querySelectorAll(".card-title");
@@ -69,6 +72,7 @@ formReference.addEventListener("submit", function (e) {
     e.classList.add("d-none");
   });
   const URL = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${ricerca2}`;
+  spinnerContainer.classList.remove("d-none");
   searchGenerator(URL);
 });
 
@@ -81,6 +85,7 @@ allImgCards.forEach((img) => {
     scomparsa.forEach((e) => {
       e.classList.add("d-none");
     });
+    spinnerContainer.classList.remove("d-none");
     searchGenerator(
       `https://striveschool-api.herokuapp.com/api/deezer/search?q=${img.alt}`
     );
