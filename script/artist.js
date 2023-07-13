@@ -29,6 +29,13 @@ const ricerca = function () {
       back.style.backgroundSize='cover'
       back.style.height= '500px'
       back.style.backgroundRepeat='no-repeat'
+      let span1=document.querySelector('.span1')
+      span1.innerText=`${data.name}`
+      let preferiti=document.getElementById('preferiti')
+      let img=document.createElement('img')
+      img.classList.add('rounded-5','mx-2')
+      img.setAttribute("src", `${data.picture_small}`)
+      preferiti.appendChild(img)
     
       
       let x = data.tracklist;
@@ -76,6 +83,9 @@ const ricerca = function () {
      `;
 
             brani.appendChild(col);
+
+          
+
           });
 
           let songRow = document.getElementsByClassName("song-row")
@@ -146,10 +156,7 @@ const audioPlay = function (n) {
 
 
 
-document.getElementById("heart").addEventListener("click", function () {
-  document.getElementById("heart").classList.toggle("bi-heart");
-  document.getElementById("heart").classList.toggle("bi-heart-fill");
-});
+
 document.getElementById("close").addEventListener("click", function () {
   document.getElementById("footer").classList.add("d-lg-none");
   document.querySelector("main").classList.add("flex-grow-1");

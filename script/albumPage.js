@@ -4,7 +4,7 @@ const eventId = addressBarContent.get("id")
 let id = 75621062
 const playerList = []
 const getAlbum = function () {
-  fetch(myUrl + id)
+  fetch(myUrl + eventId)
     .then((res) => {
       if (res.ok) {
         return res.json()
@@ -43,6 +43,16 @@ const getAlbum = function () {
       document.getElementsByTagName(
         "title"
       )[0].innerText = `${data.artist.name}-${data.title}`
+      // aggiungo la funzione per le playlist al pulsate
+      document.getElementById("add-pl").addEventListener("click", function () {
+        // collego ad una constante il valore playlist di localstorage parsato
+        const playlist = JSON.parse(localStorage.getItem("playlist"))
+        playlist.push(`${data.title}`)
+        localStorage.setItem("playlist", JSON.stringify(playlist))
+        // pulisco dentro ul e ripopolo la lista
+        document.getElementById("list").innerHTML = ""
+        populatePlaylist()
+      })
       const tracks = data.tracks.data
       tracks.forEach((element, i) => {
         playerList.push(element.preview)
@@ -92,11 +102,11 @@ const getAlbum = function () {
         aTag.controls = true
         aTag.autoplay = false
         aTag.classList.add(
-          "d-none",
-          "position-fixed",
-          "bottom-0",
-          "start-50",
-          "translate-middle-x",
+          // "d-none",
+          // "position-fixed",
+          // "bottom-0",
+          // "start-50",
+          // "translate-middle-x",
           "w-50"
         )
         let sMP3 = document.createElement("source")
@@ -109,20 +119,6 @@ const getAlbum = function () {
           audioPlay(i)
         })
       }
-      // for (let i = 0; i < songRow.length; i++) {
-      //   let aTag2 = document.createElement("audio")
-      //   aTag2.controls = true
-      //   aTag2.autoplay = false
-      //   let sMP3_2 = document.createElement("source")
-      //   sMP3_2.classList.add("source-mp3")
-      //   aTag2.appendChild(sMP3_2)
-      //   sMP3_2.src = playerList[i]
-      //   sMP3_2.type = "audio/mp3"
-      //   document.getElementById(`player${i}`).appendChild(aTag2)
-      //   // songRow[i].addEventListener("click", function () {
-      //   //   audioPlay2(i)
-      //   // })
-      // }
       document.getElementById("artist").addEventListener("click", function () {
         window.location.href = `./artistPage.html?id=${data.artist.id}`
       })
@@ -155,22 +151,6 @@ const audioPlay = function (n) {
     }
   })
 }
-// const audioPlay2 = function (n) {
-//   const allSong = document.querySelectorAll("audio")
-//   document.getElementById("player").classList.remove("d-none")
-//   allSong.forEach((song, i) => {
-//     song.addEventListener("ended", function () {
-//       document.getElementById("player").classList.add("d-none")
-//     })
-//     if (i === n) {
-//       song.classList.remove("d-none")
-//       song.play()
-//     } else {
-//       song.classList.add("d-none")
-//       song.pause()
-//     }
-//   })
-// }
 
 // il cuore diventa verde al click
 document.getElementById("heart").addEventListener("click", function () {
@@ -198,3 +178,22 @@ document
   .addEventListener("click", function () {
     window.location.href = "./index.html"
   })
+let dottedBtn = document.querySelectorAll(".add")
+dottedBtn.forEach((btn) => {
+  btn.addEventListener("click", function () {
+    console.log(btn)
+    document.getElementById("add-to-playlist").classList.toggle("d-none")
+  })
+})
+// popolo le playlist al caricamento se ci sono nel localstorage
+const populatePlaylist = function () {
+  const playlist = JSON.parse(localStorage.getItem("playlist"))
+  if (playlist) {
+    playlist.forEach((track) => {
+      const newLi = document.createElement("li")
+      newLi.innerText = track
+      document.getElementById("list").appendChild(newLi)
+    })
+  }
+}
+populatePlaylist()
