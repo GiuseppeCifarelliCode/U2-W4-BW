@@ -194,6 +194,9 @@ const populatePlaylist = function () {
       newLi.innerText = track
       document.getElementById("list").appendChild(newLi)
     })
+  } else {
+    const playlist = []
+    localStorage.setItem("playlist", JSON.stringify(playlist))
   }
 }
 populatePlaylist()
