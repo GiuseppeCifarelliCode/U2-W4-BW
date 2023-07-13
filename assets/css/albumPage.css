@@ -152,19 +152,17 @@ i:hover {
   cursor: pointer;
 }
 
-#playlist {
+#playlist-ul {
   overflow-y: scroll;
+  overflow-x: hidden;
   max-height: 80vh;
 }
-#playlist ul {
+#playlist-ul ul {
   padding: 0;
+  margin-top: 0.7em;
+}
+#playlist-ul ul li {
   list-style: none;
-}
-#playlist ul li {
-  margin-top: 0.5em;
-}
-#playlist ul li:hover {
-  cursor: pointer;
 }
 
 #heart.bi-heart-fill {
