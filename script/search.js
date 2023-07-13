@@ -77,6 +77,7 @@ const allImgCards = document.querySelectorAll(".card img");
 allImgCards.forEach((img) => {
   img.addEventListener("click", function () {
     let scomparsa = document.querySelectorAll(".scompari");
+    
     scomparsa.forEach((e) => {
       e.classList.add("d-none");
     });

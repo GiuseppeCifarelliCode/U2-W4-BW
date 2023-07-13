@@ -138,13 +138,13 @@ h3 {
     text-align: center;
     visibility: hidden;
   }
-  .overlayer .bi bi-play-circle {
+  .overlayer .bi-play-circle {
     color: #fff;
     font-size: 73px;
-    margin-top: 53px;
     transition: 100ms ease-in-out;
+    font-size: 4em !important;
   }
-  .bi bi-play-circle:hover {
+  .bi-play-circle:hover {
     transform: scale(1.1);
   }
   /*  FOLLOW*/
