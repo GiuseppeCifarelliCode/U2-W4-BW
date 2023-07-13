@@ -132,7 +132,9 @@ const getAlbum = function () {
     .then(() => {
       const albumCover = document.getElementById("album-cover")
       albumCover.setAttribute("onload", start(albumCover))
-      document.getElementById("head-album").style.backgroundColor =
+      document.getElementById("top").style.backgroundColor =
+        "#" + start(albumCover)
+      document.getElementById("btn-cont").style.backgroundColor =
         "#" + start(albumCover)
     })
 
