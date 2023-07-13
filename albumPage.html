@@ -85,11 +85,14 @@
               </li>
             </ul>
           </nav>
+          <div class="d-none d-lg-flex flex-column" id="playlist-ul">
+            <ul id="list"></ul>
+          </div>
         </header>
         <main id="main" class="col col-12 col-md-8 px-lg-5">
           <div
             id="top"
-            class="row justify-content-center align-items-center flex-column flex-lg-row shadow-lg pb-4"
+            class="row justify-content-center align-items-center flex-column flex-lg-row shadow-lg"
           >
             <div class="col-12 d-none d-lg-flex my-3 justify-content-between">
               <div class="d-flex">
@@ -172,7 +175,7 @@
                 <p id="title" class="mb-2 mt-0 h1 album-title">Album Title</p>
                 <div
                   id="album-info"
-                  class="d-flex flex-column flex-lg-row align-items-lg-center"
+                  class="d-flex flex-column flex-lg-row align-items-lg-center mt-3"
                 >
                   <p class="mb-1 d-md-inline">
                     <img
@@ -193,7 +196,7 @@
               </div>
             </div>
           </div>
-          <div class="row mt-4 align-items-center justify-content-between">
+          <div class="row mt-lg-4 align-items-center justify-content-between">
             <div class="col d-flex align-items-center gap-3 my-2">
               <div
                 class="d-none d-md-flex play justify-content-center align-items-center"
@@ -203,10 +206,10 @@
               <div class=""><i id="heart" class="bi bi-heart"></i></div>
               <div class=""><i class="bi bi-arrow-down-circle"></i></div>
               <div class="d-md-none">
-                <i class="bi bi-three-dots-vertical"></i>
+                <i class="bi bi-three-dots-vertical add"></i>
               </div>
               <div class="d-none d-md-flex">
-                <i class="bi bi-three-dots"></i>
+                <i class="bi bi-three-dots add"></i>
               </div>
             </div>
             <div
@@ -218,6 +221,14 @@
               >
                 <i class="play2 bi bi-play-fill"></i>
               </div>
+            </div>
+            <div id="add-to-playlist" class="col-12 d-none">
+              <i
+                id="add-pl"
+                class="bi bi-plus-square-fill m-md-2 d-md-inline d-flex flex-column align-items-center fs-5"
+              >
+                Aggiungi alle playlist</i
+              >
             </div>
           </div>
           <div
