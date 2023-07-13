@@ -21,78 +21,69 @@
       <div class="row row-cols-md-3">
         <header class="col col-12 col-md-2 mt-2 mt-md-0">
           <nav
-            class="d-flex justify-content-evenly fixed-bottom mb-md-0 py-2 bg-black p-3 opacity-75"
+            class="d-flex justify-content-evenly fixed-bottom bg-black pt-1 opacity-75 mb-md-0"
           >
-            <i class="bi bi-three-dots d-none d-md-block my-md-2"></i>
-            <i
-              class="bi bi-house-door-fill my-md-2 d-md-inline d-flex flex-column align-items-center"
-              ><span class="d-block d-md-inline ms-md-3">Home</span></i
+            <ul
+              class="navbar-nav me-auto mb-lg-0 d-flex flex-row w-100 justify-content-evenly flex-md-column"
             >
-            <i
-              class="bi bi-search my-md-2 d-md-inline d-flex flex-column align-items-center"
-              ><span class="d-block d-md-inline ms-md-3">Cerca</span></i
+              <li class="nav-item d-none d-md-block">
+                <a class="nav-link" aria-current="page" href="#"
+                  ><i class="bi bi-three-dots m-md-2"></i
+                ></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">
+                  <i
+                    class="bi bi-house-door-fill m-md-2 d-md-inline d-flex flex-column align-items-center"
+                  ></i
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="search.html"
+                  ><i
+                    class="bi bi-search m-md-2 d-md-inline d-flex flex-column align-items-center"
+                  ></i
+                  >Cerca</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i
+                    class="bi bi-collection m-md-2 d-md-inline d-flex flex-column align-items-center"
+                  ></i
+                  >La tua libreria</a
+                >
+              </li>
+            </ul>
+            <ul
+              class="navbar-nav me-auto mb-lg-0 flex-row w-100 justify-content-evenly flex-md-column mt-4 d-none d-lg-flex border-bottom"
             >
-            <i
-              class="bi bi-collection my-md-2 d-md-inline d-flex flex-column align-items-center"
-              ><span class="d-block d-md-inline ms-md-3"
-                >La tua libreria</span
-              ></i
-            >
-            <div class="d-none d-lg-flex flex-column mt-3">
-              <i
-                class="bi bi-plus-square-fill my-md-2 d-md-inline d-flex flex-column align-items-center"
-                ><span class="d-block d-md-inline ms-md-3"
-                  >Crea playlist</span
-                ></i
-              >
-              <i
-                id="favourite"
-                class="bi bi-heart-fill my-md-2 d-md-inline d-flex flex-column align-items-center"
-                ><span class="d-block d-md-inline ms-md-3"
-                  >Brani che ti piacciono</span
-                ></i
-              >
-              <i
-                class="bi bi-bookmark-fill my-md-2 d-md-inline d-flex flex-column align-items-center"
-                ><span class="d-block d-md-inline ms-md-3"
-                  >I tuoi episodi</span
-                ></i
-              >
-            </div>
-            <div id="playlist" class="d-none d-lg-flex flex-column border-top">
-              <ul>
-                <li>prima</li>
-                <li>seconda</li>
-                <li>terza</li>
-                <li>quarta</li>
-                <li>quinta</li>
-                <li>sesta</li>
-                <li>settima</li>
-                <li>ottava</li>
-                <li>nona</li>
-                <li>decima</li>
-                <li>prima</li>
-                <li>seconda</li>
-                <li>terza</li>
-                <li>quarta</li>
-                <li>quinta</li>
-                <li>sesta</li>
-                <li>settima</li>
-                <li>ottava</li>
-                <li>nona</li>
-                <li>decima</li>
-                <li>prima</li>
-                <li>seconda</li>
-                <li>terza</li>
-                <li>quarta</li>
-                <li>quinta</li>
-                <li>sesta</li>
-                <li>settima</li>
-                <li>ottava</li>
-                <li>nona</li>
-                <li>decima</li>
-              </ul>
-            </div>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">
+                  <i
+                    class="bi bi-plus-square-fill m-md-2 d-md-inline d-flex flex-column align-items-center"
+                  ></i
+                  >Crea playlist</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="search.html"
+                  ><i
+                    class="bi bi-heart-fill m-md-2 d-md-inline d-flex flex-column align-items-center"
+                  ></i
+                  >Brani che ti piacciono</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i
+                    class="bi bi-bookmark-fill m-md-2 d-md-inline d-flex flex-column align-items-center"
+                  ></i
+                  >I tuoi episodi</a
+                >
+              </li>
+            </ul>
           </nav>
         </header>
         <main id="main" class="col col-12 col-md-8 px-lg-5">
