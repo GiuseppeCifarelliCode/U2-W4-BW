@@ -2,6 +2,12 @@ const myUrl = "https://striveschool-api.herokuapp.com/api/deezer/album/"
 const addressBarContent = new URLSearchParams(location.search)
 const eventId = addressBarContent.get("id")
 let id = 75621062
+const trackObj = class {
+  constructor(_title, _id) {
+    this.title = _title
+    this.id = _id
+  }
+}
 const playerList = []
 const getAlbum = function () {
   fetch(myUrl + eventId)
@@ -14,9 +20,8 @@ const getAlbum = function () {
     })
     .then((data) => {
       document.getElementById("title").innerText = `${data.title}`
-      document
-        .getElementById("album-cover")
-        .setAttribute("src", `${data.cover_medium}`)
+      let albumCover = document.getElementById("album-cover")
+      albumCover.setAttribute("src", `${data.cover_medium}`)
       let time = data.duration
       const date = data.release_date
       const year = date.slice(0, 4)
@@ -47,7 +52,8 @@ const getAlbum = function () {
       document.getElementById("add-pl").addEventListener("click", function () {
         // collego ad una constante il valore playlist di localstorage parsato
         const playlist = JSON.parse(localStorage.getItem("playlist"))
-        playlist.push(`${data.title}`)
+        const track = new trackObj(`${data.title}`, `${data.id}`)
+        playlist.push(track)
         localStorage.setItem("playlist", JSON.stringify(playlist))
         // pulisco dentro ul e ripopolo la lista
         document.getElementById("list").innerHTML = ""
@@ -123,6 +129,14 @@ const getAlbum = function () {
         window.location.href = `./artistPage.html?id=${data.artist.id}`
       })
     })
+    .then(() => {
+      const albumCover = document.getElementById("album-cover")
+      albumCover.setAttribute("onload", start(albumCover))
+      document.getElementById("top").style.backgroundColor =
+        "#" + start(albumCover)
+      document.getElementById("btn-cont").style.backgroundColor =
+        "#" + start(albumCover)
+    })
 
     .catch((err) => {
       console.log(err)
@@ -191,7 +205,10 @@ const populatePlaylist = function () {
   if (playlist) {
     playlist.forEach((track) => {
       const newLi = document.createElement("li")
-      newLi.innerText = track
+      newLi.innerText = track.title
+      newLi.addEventListener("click", function () {
+        window.location.href = `./albumPage.html?id=${track.id}`
+      })
       document.getElementById("list").appendChild(newLi)
     })
   } else {
