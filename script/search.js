@@ -59,8 +59,9 @@ const searchGenerator = function (URL) {
     .catch((err) => console.log(err));
 };
 
-const input = document.getElementById("basic-addon1");
-input.addEventListener("click", function () {
+const formReference = document.querySelector("form");
+formReference.addEventListener("submit", function (e) {
+  e.preventDefault();
   const ricerca1 = document.querySelector(".form-control");
   const ricerca2 = ricerca1.value;
   let scomparsa = document.querySelectorAll(".scompari");
