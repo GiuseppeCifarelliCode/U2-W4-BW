@@ -77,8 +77,11 @@ i:hover {
 #artist:hover {
   cursor: pointer;
 }
-// div.row {
-//   audio {
-//     width: 15vw;
-//   }
-// }
+#player {
+  position: sticky;
+  bottom: 8%;
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    bottom: 0;
+  }
+}
