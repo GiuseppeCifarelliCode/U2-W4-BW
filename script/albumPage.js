@@ -20,9 +20,8 @@ const getAlbum = function () {
     })
     .then((data) => {
       document.getElementById("title").innerText = `${data.title}`
-      document
-        .getElementById("album-cover")
-        .setAttribute("src", `${data.cover_medium}`)
+      let albumCover = document.getElementById("album-cover")
+      albumCover.setAttribute("src", `${data.cover_medium}`)
       let time = data.duration
       const date = data.release_date
       const year = date.slice(0, 4)
@@ -129,6 +128,12 @@ const getAlbum = function () {
       document.getElementById("artist").addEventListener("click", function () {
         window.location.href = `./artistPage.html?id=${data.artist.id}`
       })
+    })
+    .then(() => {
+      const albumCover = document.getElementById("album-cover")
+      albumCover.setAttribute("onload", start(albumCover))
+      document.getElementById("head-album").style.backgroundColor =
+        "#" + start(albumCover)
     })
 
     .catch((err) => {
