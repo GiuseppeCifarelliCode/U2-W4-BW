@@ -29,6 +29,10 @@ h3 {
   font-size: 1.8em;
 }
 
+#list li:hover {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 678px) {
   main {
     background: rgb(36, 35, 36);

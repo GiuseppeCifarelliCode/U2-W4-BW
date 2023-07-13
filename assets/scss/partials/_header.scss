@@ -1,28 +1,26 @@
-
-nav{
-    @media screen and ( min-width:768px){ 
-        flex-direction: column;
-        position:relative!important;
-        i{
-            font-size: 1em;
-            span{
-                font-size: 0.8rem
-            }
-        }
+nav {
+  @media screen and (min-width: 768px) {
+    flex-direction: column;
+    position: relative !important;
+    i {
+      font-size: 1em;
+      span {
+        font-size: 0.8rem;
+      }
     }
-  
-
+  }
 }
 
-
-i{
-    font-size: 1.6rem;
-    span{
-        font-size: 1.2rem;
-    }
-
+i {
+  font-size: 1.6rem;
+  span {
+    font-size: 1.2rem;
+  }
 }
 
-h3{
-    font-size: 1.8em;
+h3 {
+  font-size: 1.8em;
+}
+#list li:hover {
+  cursor: pointer;
 }
