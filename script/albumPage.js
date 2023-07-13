@@ -43,6 +43,16 @@ const getAlbum = function () {
       document.getElementsByTagName(
         "title"
       )[0].innerText = `${data.artist.name}-${data.title}`
+      // aggiungo la funzione per le playlist al pulsate
+      document.getElementById("add-pl").addEventListener("click", function () {
+        // collego ad una constante il valore playlist di localstorage parsato
+        const playlist = JSON.parse(localStorage.getItem("playlist"))
+        playlist.push(`${data.title}`)
+        localStorage.setItem("playlist", JSON.stringify(playlist))
+        // pulisco dentro ul e ripopolo la lista
+        document.getElementById("list").innerHTML = ""
+        populatePlaylist()
+      })
       const tracks = data.tracks.data
       tracks.forEach((element, i) => {
         playerList.push(element.preview)
@@ -168,3 +178,22 @@ document
   .addEventListener("click", function () {
     window.location.href = "./index.html"
   })
+let dottedBtn = document.querySelectorAll(".add")
+dottedBtn.forEach((btn) => {
+  btn.addEventListener("click", function () {
+    console.log(btn)
+    document.getElementById("add-to-playlist").classList.toggle("d-none")
+  })
+})
+// popolo le playlist al caricamento se ci sono nel localstorage
+const populatePlaylist = function () {
+  const playlist = JSON.parse(localStorage.getItem("playlist"))
+  if (playlist) {
+    playlist.forEach((track) => {
+      const newLi = document.createElement("li")
+      newLi.innerText = track
+      document.getElementById("list").appendChild(newLi)
+    })
+  }
+}
+populatePlaylist()
