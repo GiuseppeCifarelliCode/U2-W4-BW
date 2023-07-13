@@ -19,7 +19,7 @@ const searchGenerator = function (URL) {
           "scompari",
           "justify-content-center"
         );
-        col.innerHTML = `<div class="card w-100">
+        col.innerHTML = `<div class="card w-100 text-bg-dark">
         <a href="./albumPage.html?id=${element.album.id}">
    <img src=${element.album.cover_medium} class="card-img-top" crossorigin="anonymous" alt="${element.title}">
    </a>

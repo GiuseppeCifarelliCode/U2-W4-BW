@@ -13,7 +13,6 @@ const getAlbum = function () {
       }
     })
     .then((data) => {
-      console.log(data)
       document.getElementById("title").innerText = `${data.title}`
       document
         .getElementById("album-cover")
@@ -54,7 +53,6 @@ const getAlbum = function () {
         const seconds = time - minutes * 60
         const hours = Math.floor(time / 3600)
         time = time - hours * 3600
-        console.log(element)
         const newRow = document.createElement("div")
         newRow.classList.add(
           "row",
@@ -67,9 +65,14 @@ const getAlbum = function () {
         newRow.innerHTML = `
 
               <div class="d-none d-lg-flex col-1">${i + 1}</div>
-              <div class=" col flex-grow-1">
+              <div class=" col flex-grow-1 d-flex gap-2">
+              <div>
                 <p class="m-0 text-truncate">${element.title}</p>
                 <p class="m-0">${element.artist.name}</p>
+                </div>
+                <div id="player${i}" class="d-md-none d-flex justify-content-end flex-grow-1">
+                 
+                </div>
               </div>
               <div class="d-lg-none col-1">
                 <i class="bi bi-three-dots-vertical"></i>
@@ -81,16 +84,31 @@ const getAlbum = function () {
             
       `
         document.getElementById("main").appendChild(newRow)
-        console.log(playerList)
       })
       let songRow = document.getElementsByClassName("song-row")
       for (let i = 0; i < songRow.length; i++) {
+        let aTag = document.createElement("audio")
+        aTag.classList.add("desktop")
+        aTag.controls = true
+        aTag.autoplay = false
+        aTag.classList.add(
+          // "d-none",
+          // "position-fixed",
+          // "bottom-0",
+          // "start-50",
+          // "translate-middle-x",
+          "w-50"
+        )
+        let sMP3 = document.createElement("source")
+        sMP3.classList.add("source-mp3")
+        aTag.appendChild(sMP3)
+        sMP3.src = playerList[i]
+        sMP3.type = "audio/mp3"
+        document.getElementById("player").appendChild(aTag)
         songRow[i].addEventListener("click", function () {
-          refreshPlayer()
-          audioPlay(playerList, i)
+          audioPlay(i)
         })
       }
-      console.log(songRow)
       document.getElementById("artist").addEventListener("click", function () {
         window.location.href = `./artistPage.html?id=${data.artist.id}`
       })
@@ -106,40 +124,47 @@ document
   .addEventListener("click", function () {
     window.location.href = "./index.html"
   })
-let aTag = document.createElement("audio")
-aTag.id = "play"
-aTag.controls = true
-aTag.autoplay = true
-aTag.classList.add(
-  "d-none",
-  "position-fixed",
-  "bottom-0",
-  "start-50",
-  "translate-middle-x",
-  "w-50"
-)
-let sMP3 = document.createElement("source")
-sMP3.classList.add("source-mp3")
-aTag.appendChild(sMP3)
-document.getElementById("top").appendChild(aTag)
-const refreshPlayer = function (src) {
-  sMP3.src = ""
-}
-const audioPlay = function (arr, i) {
-  sMP3.src = arr[i]
-  sMP3.type = "audio/mp3"
-  aTag.classList.remove("d-none")
 
-  document.querySelector("nav").appendChild(aTag)
+const audioPlay = function (n) {
+  const allSong = document.querySelectorAll("audio.desktop")
+  document.getElementById("player").classList.remove("d-none")
+  allSong.forEach((song, i) => {
+    song.addEventListener("ended", function () {
+      document.getElementById("player").classList.add("d-none")
+    })
+    if (i === n) {
+      song.classList.remove("d-none")
+      song.play()
+    } else {
+      song.classList.add("d-none")
+      song.pause()
+    }
+  })
 }
+
+// il cuore diventa verde al click
 document.getElementById("heart").addEventListener("click", function () {
   document.getElementById("heart").classList.toggle("bi-heart")
   document.getElementById("heart").classList.toggle("bi-heart-fill")
 })
+// si chiude la sezione amici al click
 document.getElementById("close").addEventListener("click", function () {
   document.getElementById("footer").classList.add("d-lg-none")
   document.querySelector("main").classList.add("flex-grow-1")
 })
+// mostro la seziona amici al click
 document.getElementById("amici").addEventListener("click", function name() {
   document.getElementById("footer").classList.remove("d-lg-none")
 })
+// link alla pagina search
+document
+  .getElementsByClassName("bi-search ")[0]
+  .addEventListener("click", function () {
+    window.location.href = "./search.html"
+  })
+// link alla pagina home
+document
+  .getElementsByClassName("bi-house-door-fill")[0]
+  .addEventListener("click", function () {
+    window.location.href = "./index.html"
+  })
