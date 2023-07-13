@@ -61,6 +61,8 @@ col.forEach((col, i) => {
    aTag.classList.remove("d-none")
  
    document.querySelector("nav").appendChild(aTag)
+   playbutton.disabled=true
+   
  })
  
  
@@ -78,7 +80,7 @@ col.forEach((col, i) => {
  let mostraB=document.createElement('button')
  mostraB.innerHTML='MOSTRA ANNUNCI'
  document.getElementById('top').appendChild(mostraB)
- mostraB.classList.add('d-none','btn','text-secondary','border-black','d-flex','justify-content-end','border-0')
+ mostraB.classList.add('d-none','btn','text-secondary','border-black','d-flex','justify-content-end','border-0','mostra')
  hiddenb.addEventListener('click',()=>{
    mostraB.classList.remove('d-none')
    let row=document.querySelector('.rw')
@@ -92,6 +94,21 @@ col.forEach((col, i) => {
      mostraB.classList.add('d-none')
     
    })
+
+    let URL=`https://striveschool-api.herokuapp.com/api/deezer/search?q=best-today`
+   fetch(URL)
+    .then((res)=>{
+      if(res.ok)
+      return res.json()
+    })
+
+    .then((data)=>{
+      console.log(data)
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+   
     
 
 
