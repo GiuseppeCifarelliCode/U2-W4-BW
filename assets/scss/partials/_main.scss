@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 
+
+
+
 @media screen and (min-width: 678px) {
   main {
     background: rgba(36, 35, 36, 1);
@@ -251,7 +254,28 @@ aside h3,h3{
 
 
 // fine prova
+.header-cardA {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  // height: 20%;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+}
 
+
+.header-cardA {
+  height: 100px;
+  color: yellow;
+  background-color: blue;
+  position: sticky;
+  bottom: 0;
+  background: #642B73;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #C6426E, #642B73);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #C6426E, #642B73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
 }
 
