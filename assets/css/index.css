@@ -206,6 +206,10 @@ h3 {
   font-family: "Roboto", sans-serif;
 }
 
+.greencolor {
+  color: #1FDF64;
+}
+
 audio::-webkit-media-controls-panel {
   background-color: rgb(31, 31, 31);
 }
