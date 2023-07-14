@@ -1,67 +1,67 @@
-const URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/"
-const barra = new URLSearchParams(location.search)
-const eventId = barra.get("id")
+const URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
+const barra = new URLSearchParams(location.search);
+const eventId = barra.get("id");
 
-let id = 412
-const playerList = []
+let id = 412;
+const playerList = [];
 
 const ricerca = function () {
   fetch(URL + eventId)
     .then((res) => {
       if (res.ok) {
-        console.log(res)
-        return res.json()
+        console.log(res);
+        return res.json();
       } else {
-        throw new Error("errore")
+        throw new Error("errore");
       }
     })
     .then((data) => {
-      console.log(data)
-      console.log(data.tracklist)
-      let fan = document.querySelector(".fan")
-      fan.innerText = `${data.nb_fan}`
-      let nome = document.getElementById("nome")
-      nome.innerText = `${data.name}`
-      let back = document.getElementById("back")
-      back.style.backgroundImage = `url( ${data.picture_xl} )`
-      back.style.backgroundSize = "cover"
-      back.style.height = "500px"
-      back.style.backgroundRepeat = "no-repeat"
-      let span1 = document.querySelector(".span1")
-      span1.innerText = `${data.name}`
-      let preferiti = document.getElementById("preferiti")
-      let img = document.createElement("img")
-      img.classList.add("rounded-5", "mx-2")
-      img.setAttribute("src", `${data.picture_small}`)
-      preferiti.appendChild(img)
+      console.log(data);
+      console.log(data.tracklist);
+      let fan = document.querySelector(".fan");
+      fan.innerText = `${data.nb_fan}`;
+      let nome = document.getElementById("nome");
+      nome.innerText = `${data.name}`;
+      let back = document.getElementById("back");
+      back.style.backgroundImage = `url( ${data.picture_xl} )`;
+      back.style.backgroundSize = "cover";
+      back.style.height = "500px";
+      back.style.backgroundRepeat = "no-repeat";
+      let span1 = document.querySelector(".span1");
+      span1.innerText = `${data.name}`;
+      let preferiti = document.getElementById("preferiti");
+      let img = document.createElement("img");
+      img.classList.add("rounded-5", "mx-2");
+      img.setAttribute("src", `${data.picture_small}`);
+      preferiti.appendChild(img);
 
-      let x = data.tracklist
-      console.log(x)
+      let x = data.tracklist;
+      console.log(x);
       fetch(x)
         .then((res) => {
           if (res.ok) {
-            return res.json()
+            return res.json();
           } else {
-            throw new Error("errore")
+            throw new Error("errore");
           }
         })
         .then((el) => {
-          console.log(el)
+          console.log(el);
           el.data.forEach((el) => {
-            playerList.push(el.preview)
+            playerList.push(el.preview);
 
-            let time = el.duration
-            const date = data.release_date
+            let time = el.duration;
+            const date = data.release_date;
 
-            const minutes = Math.floor(time / 60)
-            const seconds = time - minutes * 60
-            const hours = Math.floor(time / 3600)
-            time = time - hours * 3600
+            const minutes = Math.floor(time / 60);
+            const seconds = time - minutes * 60;
+            const hours = Math.floor(time / 3600);
+            time = time - hours * 3600;
 
-            let brani = document.getElementById("brani")
+            let brani = document.getElementById("brani");
 
-            let col = document.createElement("div")
-            col.classList.add("col", "col-12", "d-flex", "song-row")
+            let col = document.createElement("div");
+            col.classList.add("col", "col-12", "d-flex", "song-row");
             col.innerHTML = `  <div class=" mx-2 d-lg-flex col-1">
             <img src=${el.album.cover} class="card-img-top" alt="...">   </div>
      <div class=" col flex-grow-1">
@@ -75,16 +75,16 @@ const ricerca = function () {
        <p class="mt-0">${el.rank}</p>
        <p class="mt-0">${minutes}:${seconds}</p>
      </div>
-     `
+     `;
 
-            brani.appendChild(col)
-          })
+            brani.appendChild(col);
+          });
 
-          let songRow = document.getElementsByClassName("song-row")
+          let songRow = document.getElementsByClassName("song-row");
           for (let i = 0; i < songRow.length; i++) {
-            let aTag = document.createElement("audio")
-            aTag.controls = true
-            aTag.autoplay = false
+            let aTag = document.createElement("audio");
+            aTag.controls = true;
+            aTag.autoplay = false;
             aTag.classList.add(
               "d-none",
               "position-fixed",
@@ -92,78 +92,95 @@ const ricerca = function () {
               "start-50",
               "translate-middle-x",
               "w-50"
-            )
-            let sMP3 = document.createElement("source")
-            sMP3.classList.add("source-mp3")
-            aTag.appendChild(sMP3)
-            sMP3.src = playerList[i]
-            sMP3.type = "audio/mp3"
-            aTag.classList.remove("d-none")
-            document.getElementById("player").appendChild(aTag)
+            );
+            let sMP3 = document.createElement("source");
+            sMP3.classList.add("source-mp3");
+            aTag.appendChild(sMP3);
+            sMP3.src = playerList[i];
+            sMP3.type = "audio/mp3";
+            aTag.classList.remove("d-none");
+            document.getElementById("player").appendChild(aTag);
 
             songRow[i].addEventListener("click", function () {
-              audioPlay(i)
-            })
+              audioPlay(i);
+            });
           }
 
           document
             .getElementById("home")
             .addEventListener("click", function () {
-              window.location.href = " ./index.html"
-            })
+              window.location.href = " ./index.html";
+            });
 
           document
             .getElementById("cerca")
             .addEventListener("click", function () {
-              window.location.href = " ./search.html"
-            })
-        })
+              window.location.href = " ./search.html";
+            });
+        });
     })
     .catch((err) => {
-      console.log(err)
-    })
-}
+      console.log(err);
+    });
+};
 
-ricerca()
+ricerca();
 
 const audioPlay = function (n) {
-  const allSong = document.querySelectorAll("audio")
-  document.getElementById("player").classList.remove("d-none")
+  const allSong = document.querySelectorAll("audio");
+  document.getElementById("player").classList.remove("d-none");
   allSong.forEach((song, i) => {
     song.addEventListener("ended", function () {
-      document.getElementById("player").classList.add("d-none")
-    })
+      document.getElementById("player").classList.add("d-none");
+    });
     if (i === n) {
-      song.classList.remove("d-none")
-      song.play()
+      song.classList.remove("d-none");
+      song.play();
     } else {
-      song.classList.add("d-none")
-      song.pause()
+      song.classList.add("d-none");
+      song.pause();
     }
-  })
-}
+  });
+};
 
 document.getElementById("close").addEventListener("click", function () {
-  document.getElementById("footer").classList.add("d-lg-none")
-  document.querySelector("main").classList.add("flex-grow-1")
-})
+  document.getElementById("footer").classList.add("d-lg-none");
+  document.querySelector("main").classList.add("flex-grow-1");
+});
 document.getElementById("amici").addEventListener("click", function name() {
-  document.getElementById("footer").classList.remove("d-lg-none")
-})
+  document.getElementById("footer").classList.remove("d-lg-none");
+});
 const populatePlaylist = function () {
-  const playlist = JSON.parse(localStorage.getItem("playlist"))
+  const playlist = JSON.parse(localStorage.getItem("playlist"));
   if (playlist) {
     playlist.forEach((track) => {
-      const newLi = document.createElement("li")
-      newLi.innerText = track.title
+      const newLi = document.createElement("li");
+      newLi.innerText = track.title;
       newLi.addEventListener("click", function () {
-        window.location.href = `./albumPage.html?id=${track.id}`
-      })
-      document.getElementById("list").appendChild(newLi)
-    })
+        window.location.href = `./albumPage.html?id=${track.id}`;
+      });
+      document.getElementById("list").appendChild(newLi);
+    });
   } else {
-    const playlist = []
-    localStorage.setItem("playlist", JSON.stringify(playlist))
+    const playlist = [];
+    localStorage.setItem("playlist", JSON.stringify(playlist));
   }
+};
+populatePlaylist();
+
+// USERNAME/ACCESS LINK
+const userButton = document.querySelector(".user-button");
+const bottomHeader = document.querySelector(".header-cardA");
+const userName = JSON.parse(localStorage.getItem("username"));
+if (userName) {
+  userButton.innerText = userName;
+  bottomHeader.classList.add("d-md-none");
+} else {
+  userButton.innerText = "Sign In";
 }
-populatePlaylist()
+
+// LOGOUT
+const logoutButton = document.querySelector(".logout");
+logoutButton.addEventListener("click", () => {
+  localStorage.removeItem("username");
+});

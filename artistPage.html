@@ -16,7 +16,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
-   
   </head>
   <body class="p-2">
     <div class="container-fluid">
@@ -91,191 +90,218 @@
             <ul id="list"></ul>
           </div>
         </header>
-        <main id="main" class="col col-12 col-md-7 bg-dark">
-           <div class="row row-cols-1 "> 
-            <div class="col d-flex flex-column flex-md-row"> 
+        <main id="main" class="col col-12 col-md-8 bg-dark">
+          <div class="row row-cols-1">
+            <div class="col d-flex flex-column flex-md-row">
               <div
-              id="top"
-              class="row justify-content-center align-items-center flex-column flex-lg-row shadow-lg pb-4 w-100"
-            >
-              <div class="col-12 d-none d-lg-flex my-3 justify-content-between">
-                <div class="d-flex">
-                  <p
-                    class="m-0 bg-dark chevron d-flex justify-content-center align-items-center"
-                  >
-                    <i class="bi bi-chevron-left"></i>
-                  </p>
-                  <p
-                    class="m-0 bg-dark chevron d-flex justify-content-center align-items-center"
-                  >
-                    <i class="bi bi-chevron-right"></i>
-                  </p>
-                </div>
-                <div>
-                  <div class="dropdown">
-                    <button
-                      class="btn btn-dark dropdown-toggle rounded-pill"
-                      type="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
+                id="top"
+                class="row justify-content-center align-items-center flex-column flex-lg-row shadow-lg pb-4 w-100"
+              >
+                <div
+                  class="col-12 d-none d-lg-flex my-3 justify-content-between"
+                >
+                  <div class="d-flex">
+                    <p
+                      class="m-0 bg-dark chevron d-flex justify-content-center align-items-center"
                     >
-                      <img
-                        src="./assets/imgs/main/image-14.jpg"
-                        width="20px"
-                        alt="profile pic"
-                        class="rounded-circle"
-                      />
-                      Nome utente
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                      <li>
-                        <a class="dropdown-item active" href="#">Profilo</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">Le mie playlist</a>
-                      </li>
-                      <li>
-                        <a id="amici" class="dropdown-item" href="#"
-                          >Attività amici</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">Log-out</a>
-                      </li>
-                      <li><hr class="dropdown-divider" /></li>
-                    </ul>
+                      <i class="bi bi-chevron-left"></i>
+                    </p>
+                    <p
+                      class="m-0 bg-dark chevron d-flex justify-content-center align-items-center"
+                    >
+                      <i class="bi bi-chevron-right"></i>
+                    </p>
+                  </div>
+                  <div>
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-dark dropdown-toggle rounded-pill user-button"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <img
+                          src="./assets/imgs/main/image-14.jpg"
+                          width="20px"
+                          alt="profile pic"
+                          class="rounded-circle"
+                        />
+                        Nome utente
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-dark">
+                        <li>
+                          <a class="dropdown-item" href="iscrizione.html"
+                            >Iscriviti!</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item active" href="#">Profilo</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Le mie playlist</a>
+                        </li>
+                        <li>
+                          <a id="amici" class="dropdown-item" href="#"
+                            >Attività amici</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Log-out</a>
+                        </li>
+                        <li><hr class="dropdown-divider" /></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="back" class="text-center">
+                  <div class="text-start">
+                    <i class="text-primary bi bi-patch-check-fill"> </i
+                    ><span class="m-2">artista verificato</span>
+                  </div>
+                  <div id="immagine" class="flex-md-grow-1">
+                    <p id="nome" class="m-1 text-start fs-1">Name Artist</p>
+                    <p id="nome" class="m-1 text-start fs-6">
+                      <span class="fan"> </span> ascoltatori mensili
+                    </p>
                   </div>
                 </div>
               </div>
-         
-              <div id="back" class=" text-center">
-              
-             
-              <div class="text-start"><i class=" text-primary bi bi-patch-check-fill   "> </i><span class="m-2  ">artista verificato</span></div>
-              <div id="immagine" class="flex-md-grow-1">
-                <p id="nome" class="m-1 text-start fs-1">Name Artist</p>
-                <p id="nome" class="m-1 text-start  fs-6"><span class="fan">  </span> ascoltatori mensili</p>
+            </div>
+            <div class="row mt-4 align-items-center justify-content-between">
+              <div class="col d-flex align-items-center gap-3 my-2">
+                <div
+                  class="d-none d-md-flex play justify-content-center align-items-center"
+                >
+                  <i class="play2 bi bi-play-fill"></i>
+                </div>
+
+                <button
+                  type="button"
+                  class="btn btn-dark border border-light px-4"
+                >
+                  Following
+                </button>
+                <div class="d-md-none">
+                  <i class="bi bi-three-dots-vertical"></i>
+                </div>
+                <div class="d-none d-md-flex">
+                  <i class="bi bi-three-dots"></i>
+                </div>
               </div>
+              <div
+                class="col d-flex d-md-none gap-2 justify-content-end align-items-center"
+              >
+                <div><i class="bi bi-shuffle"></i></div>
+                <div
+                  class="d-flex justify-content-center align-items-center play"
+                >
+                  <i class="play2 bi bi-play-fill"></i>
+                </div>
+              </div>
+              <div id="speciale" class="col d-none d-lg-block d-flex flex-and">
+                <div id="preferiti" class="d-flex flex-row-reverse">
+                  <h6>
+                    hai messo mi piace a 5 brani <br />
+                    di -<span class="span1"></span>
+                  </h6>
+                </div>
               </div>
             </div>
           </div>
-          <div class="row mt-4 align-items-center justify-content-between">
-            <div class="col d-flex align-items-center gap-3 my-2">
-              <div
-                class="d-none d-md-flex play justify-content-center align-items-center"
-              >
-                <i class="play2 bi bi-play-fill"></i>
-              </div>
-            
-              <button type="button" class="btn btn-dark border border-light px-4">Following</button>
-              <div class="d-md-none">
-                <i class="bi bi-three-dots-vertical"></i>
-              </div>
-              <div class="d-none d-md-flex">
-                <i class="bi bi-three-dots"></i>
-              </div>
-            </div>
-            <div
-              class="col d-flex d-md-none gap-2 justify-content-end align-items-center"
-            >
-              <div><i class="bi bi-shuffle"></i></div>
-              <div
-                class="d-flex justify-content-center align-items-center play"
-              >
-                <i class="play2 bi bi-play-fill"></i>
-              </div>
-            </div>
-            <div id="speciale" class="col d-none d-lg-block d-flex  flex-and ">
-         
-              <div id="preferiti"   class="d-flex  flex-row-reverse   "  >
-               
-              <h6>hai messo mi piace a 5 brani <br> di  -<span class="span1"></span></h6>
-              </div>
-            </div>
-          </div>
-           </div>
           <div id="brani" class="row">
-            <h2 class='my-4'>popolari</h2>
-          
-          
+            <h2 class="my-4">popolari</h2>
+          </div>
         </main>
         <footer
-        id="footer"
-        class="col col-12 col-md-2 bg-black flex-column mt-2 px-3 d-none d-lg-flex"
-      >
-        <div class="d-flex align-items-center justify-content-between">
-          <p  class="m-0 h6">Attività amici</p>
-          <div>
-            <i class="bi bi-person-plus-fill fs-5"></i>
-            <i id="close" class="bi bi-x-lg fs-5"></i>
+          id="footer"
+          class="col col-12 col-md-2 bg-black flex-column mt-2 px-3 d-none d-lg-flex"
+        >
+          <div class="d-flex align-items-center justify-content-between">
+            <p class="m-0 h6">Attività amici</p>
+            <div>
+              <i class="bi bi-person-plus-fill fs-5"></i>
+              <i id="close" class="bi bi-x-lg fs-5"></i>
+            </div>
           </div>
-        </div>
-        <div class="d-flex justify-content-between mt-4">
-          <div class="d-flex align-items-start">
-            <img
-              src="./assets/imgs/main/image-16.jpg"
-              alt="pic"
-              width="25px"
-              class="rounded-circle"
-            />
+          <div class="d-flex justify-content-between mt-4">
+            <div class="d-flex align-items-start">
+              <img
+                src="./assets/imgs/lorenzo.jpg"
+                alt="pic"
+                width="25px"
+                class="rounded-circle"
+              />
+            </div>
+            <div class="d-flex flex-column">
+              <h4 class="m-0">Lorenzo</h4>
+              <small class="m0">Sta ascoltando: "Windows 95 - my Love"</small>
+              <p class="m0">
+                <i class="bi bi-music-note-beamed fs-6">
+                  <small>Album</small></i
+                >
+              </p>
+            </div>
           </div>
-          <div class="d-flex flex-column">
-            <h4 class="m-0">Nome amico</h4>
-            <small class="m0">brano in play · Artist</small>
-            <p class="m0">
-              <i class="bi bi-music-note-beamed fs-6">
-                <small>Album</small></i
+          <div class="d-flex justify-content-between mt-4">
+            <div class="d-flex align-items-start">
+              <img
+                src="./assets/imgs/giulia.jpg"
+                alt="pic"
+                width="25px"
+                class="rounded-circle"
+              />
+            </div>
+            <div class="d-flex flex-column">
+              <h4 class="m-0">Giulia</h4>
+              <small class="m0"
+                >Sta ascoltando: "Scusate l' OT - Avrei una domanda"</small
               >
-            </p>
+              <p class="m0">
+                <i class="bi bi-music-note-beamed fs-6">
+                  <small>Album</small></i
+                >
+              </p>
+            </div>
           </div>
-          <div>
-            <small class="m-0">2 ore fa</small>
+          <div class="d-flex justify-content-between mt-4">
+            <div class="d-flex align-items-start">
+              <img
+                src="./assets/imgs/sebastiano.jpg"
+                alt="pic"
+                width="25px"
+                class="rounded-circle"
+              />
+            </div>
+            <div class="d-flex flex-column">
+              <h4 class="m-0">Sebastiano</h4>
+              <small class="m0">Sta ascoltando: "Che sfondo metto oggi?"</small>
+              <p class="m0">
+                <i class="bi bi-vinyl fs-6"> <small>Album</small></i>
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="d-flex justify-content-between mt-4">
-          <div class="d-flex align-items-start">
-            <img
-              src="./assets/imgs/main/image-16.jpg"
-              alt="pic"
-              width="25px"
-              class="rounded-circle"
-            />
-          </div>
-          <div class="d-flex flex-column">
-            <h4 class="m-0">Nome amico</h4>
-            <small class="m0">brano in play · Artist</small>
-            <p class="m0">
-              <i class="bi bi-music-note-beamed fs-6">
-                <small>Album</small></i
+          <div class="d-flex justify-content-between mt-4">
+            <div class="d-flex align-items-start">
+              <img
+                src="./assets/imgs/main/image-16.jpg"
+                alt="pic"
+                width="25px"
+                class="rounded-circle"
+              />
+            </div>
+            <div class="d-flex flex-column">
+              <h4 class="m-0">Imad</h4>
+              <small class="m0"
+                >Sta ascoltando: "Javascript - Odio incondizionato"</small
               >
-            </p>
+              <p class="m0">
+                <i class="bi bi-vinyl fs-6"> <small>Album</small></i>
+              </p>
+            </div>
           </div>
-          <div>
-            <small class="m-0">2 ore fa</small>
-          </div>
-        </div>
-        <div class="d-flex justify-content-between mt-4">
-          <div class="d-flex align-items-start">
-            <img
-              src="./assets/imgs/main/image-16.jpg"
-              alt="pic"
-              width="25px"
-              class="rounded-circle"
-            />
-          </div>
-          <div class="d-flex flex-column">
-            <h4 class="m-0">Nome amico</h4>
-            <small class="m0">brano in play · Artist</small>
-            <p class="m0">
-              <i class="bi bi-vinyl fs-6"> <small>Album</small></i>
-            </p>
-          </div>
-          <div>
-            <small class="m-0">2 ore fa</small>
-          </div>
-        </div>
-      </footer>
-      <div id="player" class="d-none"></div>
+        </footer>
+        <div id="player" class="d-none"></div>
       </div>
     </div>
     <script src="script/artist.js"></script>
