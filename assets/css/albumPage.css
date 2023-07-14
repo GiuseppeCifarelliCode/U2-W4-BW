@@ -221,6 +221,14 @@ audio::-webkit-media-controls-timeline-container {
   color: white;
 }
 
+#list li {
+  margin-top: 0.5em;
+}
+#list li:hover {
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+}
+
 nav {
   background-color: rgba(0, 0, 0, 0.45);
 }
