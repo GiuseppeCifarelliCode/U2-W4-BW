@@ -152,7 +152,6 @@ document.getElementById("close").addEventListener("click", function () {
 });
 // mostro la seziona amici al click
 document.getElementById("amici").addEventListener("click", function name() {
-<<<<<<< HEAD
   document.getElementById("footer").classList.remove("d-lg-none")
 })
 populatePlaylist()
@@ -190,8 +189,3 @@ console.log(card2)
 card2.addEventListener('click',()=>{
   window.location.href=`https://open.spotify.com/playlist/37i9dQZF1EIgJXYC9nzK3C`
 })
-=======
-  document.getElementById("footer").classList.remove("d-lg-none");
-});
-populatePlaylist();
->>>>>>> main
