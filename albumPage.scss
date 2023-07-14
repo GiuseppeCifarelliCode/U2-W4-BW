@@ -40,18 +40,6 @@ i:hover {
   border-bottom: 1px solid white;
   cursor: pointer;
 }
-#playlist-ul {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  max-height: 80vh;
-  ul {
-    padding: 0;
-    margin-top: 0.7em;
-    li {
-      list-style: none;
-    }
-  }
-}
 
 #heart.bi-heart-fill {
   color: #1fdf64;

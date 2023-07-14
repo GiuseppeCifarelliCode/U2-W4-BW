@@ -221,10 +221,20 @@ audio::-webkit-media-controls-timeline-container {
   color: white;
 }
 
-#list li {
+#playlist-ul {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 80vh;
+}
+#playlist-ul ul {
+  padding: 0;
+  margin-top: 0.7em;
+}
+#playlist-ul ul li {
+  list-style: none;
   margin-top: 0.5em;
 }
-#list li:hover {
+#playlist-ul ul li:hover {
   border-bottom: 1px solid white;
   border-top: 1px solid white;
 }
@@ -272,19 +282,6 @@ i:hover {
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   cursor: pointer;
-}
-
-#playlist-ul {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  max-height: 80vh;
-}
-#playlist-ul ul {
-  padding: 0;
-  margin-top: 0.7em;
-}
-#playlist-ul ul li {
-  list-style: none;
 }
 
 #heart.bi-heart-fill {

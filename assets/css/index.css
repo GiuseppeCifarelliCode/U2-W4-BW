@@ -219,4 +219,22 @@ audio::-webkit-media-controls-time-remaining-display {
 
 audio::-webkit-media-controls-timeline-container {
   color: white;
+}
+
+#playlist-ul {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 80vh;
+}
+#playlist-ul ul {
+  padding: 0;
+  margin-top: 0.7em;
+}
+#playlist-ul ul li {
+  list-style: none;
+  margin-top: 0.5em;
+}
+#playlist-ul ul li:hover {
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
 }/*# sourceMappingURL=index.css.map */
