@@ -118,10 +118,16 @@ const bottomHeader = document.querySelector(".header-cardA")
 const userName = JSON.parse(localStorage.getItem("username"))
 if (userName) {
   userButton.innerText = userName
-  bottomHeader.classList.add("d-md-none") //Non si attiva perchè ha display flex !important
+  bottomHeader.classList.add("d-md-none")
 } else {
   userButton.innerText = "Sign In"
 }
+
+// LOGOUT
+const logoutButton = document.querySelector(".logout")
+logoutButton.addEventListener("click", () => {
+  localStorage.removeItem("username")
+})
 
 const populatePlaylist = function () {
   const playlist = JSON.parse(localStorage.getItem("playlist"))
