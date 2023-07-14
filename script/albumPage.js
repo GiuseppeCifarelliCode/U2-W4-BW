@@ -107,14 +107,7 @@ const getAlbum = function () {
         aTag.classList.add("desktop")
         aTag.controls = true
         aTag.autoplay = false
-        aTag.classList.add(
-          // "d-none",
-          // "position-fixed",
-          // "bottom-0",
-          // "start-50",
-          // "translate-middle-x",
-          "w-50"
-        )
+        aTag.classList.add("w-50")
         let sMP3 = document.createElement("source")
         sMP3.classList.add("source-mp3")
         aTag.appendChild(sMP3)
@@ -125,6 +118,12 @@ const getAlbum = function () {
           audioPlay(i)
         })
       }
+
+      document.querySelectorAll(".bi-play-fill").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          audioPlay(3)
+        })
+      })
       document.getElementById("artist").addEventListener("click", function () {
         window.location.href = `./artistPage.html?id=${data.artist.id}`
       })
