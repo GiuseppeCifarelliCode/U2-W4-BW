@@ -98,14 +98,22 @@
             <div class="col-12 d-none d-md-flex my-3 justify-content-between">
               <div class="d-flex">
                 <p
-                  class="m-0 bg-dark chevron d-flex justify-content-center align-items-center"
+                  class="m-0 bg-dark d-flex justify-content-center align-items-center chevron"
                 >
-                  <i class="bi bi-chevron-left"></i>
+                  <i
+                    onclick="window.history.back()"
+                    class="bi bi-chevron-left"
+                    style="cursor: pointer"
+                  ></i>
                 </p>
                 <p
                   class="m-0 bg-dark chevron d-flex justify-content-center align-items-center"
                 >
-                  <i class="bi bi-chevron-right"></i>
+                  <i
+                    onclick="window.history.forward()"
+                    class="bi bi-chevron-right"
+                    style="cursor: pointer"
+                  ></i>
                 </p>
               </div>
               <div>
@@ -513,7 +521,10 @@
                       </div>
                       <div class="d-flex justify-content-between mt-2">
                         <div>
-                          <i class="bi bi-suit-heart-fill me-2"></i
+                          <i
+                            class="bi bi-suit-heart-fill me-2"
+                            style="color: green"
+                          ></i
                           ><i class="bi bi-three-dots-vertical"></i>
                         </div>
                         <div
@@ -576,7 +587,10 @@
                       </div>
                       <div class="d-flex justify-content-between mt-2">
                         <div>
-                          <i class="bi bi-suit-heart-fill me-2"></i
+                          <i
+                            class="bi bi-suit-heart-fill me-2"
+                            style="color: green"
+                          ></i
                           ><i class="bi bi-three-dots-vertical"></i>
                         </div>
                         <div
