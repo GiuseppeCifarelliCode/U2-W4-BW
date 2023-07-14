@@ -218,7 +218,6 @@ const bottomHeader = document.querySelector(".header-cardA");
 const userName = JSON.parse(localStorage.getItem("username"));
 if (userName) {
   userButton.innerText = userName;
-  bottomHeader.classList.add("d-md-none");
 } else {
   userButton.innerText = "Sign In";
 }

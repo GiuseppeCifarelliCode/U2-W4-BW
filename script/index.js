@@ -152,40 +152,35 @@ document.getElementById("close").addEventListener("click", function () {
 });
 // mostro la seziona amici al click
 document.getElementById("amici").addEventListener("click", function name() {
-  document.getElementById("footer").classList.remove("d-lg-none")
-})
-populatePlaylist()
-
-
+  document.getElementById("footer").classList.remove("d-lg-none");
+});
+populatePlaylist();
 
 // album study (grigione)
-let myrow=document.querySelector('.study')
-let o='study'
-console.log(myrow)
-myrow.addEventListener('click',()=>{
+let myrow = document.querySelector(".study");
+let o = "study";
+console.log(myrow);
+myrow.addEventListener("click", () => {
   fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${o}`)
-  .then((res)=>{
-    if(res.ok){
-      return res.json()
-    } else{
-      throw new Error('errore')
-    }
-  })
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error("errore");
+      }
+    })
 
+    .then((data) => {
+      console.log(data);
+      window.location.href = `albumPage.html?id=${data.data[0].album.id}`;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
-  .then((data)=>{
-    console.log(data)
-    window.location.href=`albumPage.html?id=${data.data[0].album.id}`
-  })
-  .catch((err)=>{
-    console.log(err)
-  })
-})
-
-
-
-let card2=document.querySelector('.indie')
-console.log(card2)
-card2.addEventListener('click',()=>{
-  window.location.href=`https://open.spotify.com/playlist/37i9dQZF1EIgJXYC9nzK3C`
-})
+let card2 = document.querySelector(".indie");
+console.log(card2);
+card2.addEventListener("click", () => {
+  window.location.href = `https://open.spotify.com/playlist/37i9dQZF1EIgJXYC9nzK3C`;
+});
