@@ -60,13 +60,6 @@ playbutton.addEventListener("click", () => {
   playbutton.disabled = true
 })
 
-let saveButton = document.querySelector(".save")
-console.log()
-
-saveButton.addEventListener("click", () => {
-  localStorage.setItem("artista nirvana", "smell like teen spirit")
-})
-
 let hiddenb = document.querySelector(".hiddenb")
 console.log(hiddenb)
 let mostraB = document.createElement("button")
@@ -125,7 +118,7 @@ const bottomHeader = document.querySelector(".header-cardA")
 const userName = JSON.parse(localStorage.getItem("username"))
 if (userName) {
   userButton.innerText = userName
-  bottomHeader.classList.add("d-none !important") //Non si attiva perchè ha display flex !important
+  bottomHeader.classList.add("d-md-none") //Non si attiva perchè ha display flex !important
 } else {
   userButton.innerText = "Sign In"
 }

@@ -33,7 +33,7 @@ h3 {
   cursor: pointer;
 }
 
-@media screen and (min-width: 678px) {
+@media screen and (min-width: 768px) {
   main {
     background: rgb(36, 35, 36);
     background: -webkit-gradient(left top, left bottom, color-stop(0%, rgb(36, 35, 36)), color-stop(100%, rgb(3, 3, 3)));
