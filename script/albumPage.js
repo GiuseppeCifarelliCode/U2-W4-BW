@@ -211,3 +211,12 @@ const populatePlaylist = function () {
   }
 }
 populatePlaylist()
+// USERNAME/ACCESS LINK
+const userButton = document.querySelector("#username")
+const userName = JSON.parse(localStorage.getItem("username"))
+if (userName) {
+  userButton.innerText = userName
+  bottomHeader.classList.add("d-none") //Non si attiva perchè ha display flex !important
+} else {
+  userButton.innerText = "Sign in"
+}
