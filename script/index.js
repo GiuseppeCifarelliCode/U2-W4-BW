@@ -129,3 +129,21 @@ if (userName) {
 } else {
   userButton.innerText = "Sign In"
 }
+
+const populatePlaylist = function () {
+  const playlist = JSON.parse(localStorage.getItem("playlist"))
+  if (playlist) {
+    playlist.forEach((track) => {
+      const newLi = document.createElement("li")
+      newLi.innerText = track.title
+      newLi.addEventListener("click", function () {
+        window.location.href = `./albumPage.html?id=${track.id}`
+      })
+      document.getElementById("list").appendChild(newLi)
+    })
+  } else {
+    const playlist = []
+    localStorage.setItem("playlist", JSON.stringify(playlist))
+  }
+}
+populatePlaylist()
