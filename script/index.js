@@ -60,21 +60,12 @@ playbutton.addEventListener("click", () => {
   playbutton.disabled = true
 })
 
-<<<<<<< HEAD
-// let saveButton = document.querySelector(".save");
-// console.log();
-
-// saveButton.addEventListener("click", () => {
-//   localStorage.setItem("artista nirvana", "smell like teen spirit");
-// });
-=======
 let saveButton = document.querySelector(".save")
 console.log()
 
 saveButton.addEventListener("click", () => {
   localStorage.setItem("artista nirvana", "smell like teen spirit")
 })
->>>>>>> main
 
 let hiddenb = document.querySelector(".hiddenb")
 console.log(hiddenb)
@@ -104,21 +95,11 @@ mostraB.addEventListener("click", () => {
   mostraB.classList.add("d-none")
 })
 
-<<<<<<< HEAD
-
-
-
-
-
-
-  
-=======
 let mycol = document.querySelectorAll(".cardV img ")
 // console.log(mycol);
 mycol.forEach((img, i) => {
   let alt = img.alt
   console.log(alt)
->>>>>>> main
 
   img.parentElement.addEventListener("click", () => {
     fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${alt}`)
