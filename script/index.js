@@ -118,20 +118,14 @@ mycol.forEach((img, i) => {
       })
   })
 })
-const populatePlaylist = function () {
-  const playlist = JSON.parse(localStorage.getItem("playlist"))
-  if (playlist) {
-    playlist.forEach((track) => {
-      const newLi = document.createElement("li")
-      newLi.innerText = track.title
-      newLi.addEventListener("click", function () {
-        window.location.href = `./albumPage.html?id=${track.id}`
-      })
-      document.getElementById("list").appendChild(newLi)
-    })
-  } else {
-    const playlist = []
-    localStorage.setItem("playlist", JSON.stringify(playlist))
-  }
+
+// USERNAME/ACCESS LINK
+const userButton = document.querySelector(".user-button")
+const bottomHeader = document.querySelector(".header-cardA")
+const userName = JSON.parse(localStorage.getItem("username"))
+if (userName) {
+  userButton.innerText = userName
+  bottomHeader.classList.add("d-none !important") //Non si attiva perchè ha display flex !important
+} else {
+  userButton.innerText = "Sign In"
 }
-populatePlaylist()
