@@ -134,7 +134,7 @@ const getAlbum = function () {
       document.getElementById("top").style.backgroundColor =
         "#" + start(albumCover)
       let sfumato = `linear-gradient(to bottom, #${start(albumCover)}, #212121)`
-      document.getElementById("btn-cont").style.backgroundImage = sfumato
+      document.getElementById("main").style.backgroundImage = sfumato
     })
 
     .catch((err) => {
