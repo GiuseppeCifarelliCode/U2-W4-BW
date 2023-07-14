@@ -97,41 +97,35 @@ mostraB.addEventListener("click", () => {
 
 let mycol = document.querySelectorAll(".cardV img ");
 // console.log(mycol);
-mycol.forEach((img,i) => {
-  let alt=img.alt
-  console.log(alt)
-  
+mycol.forEach((img, i) => {
+  let alt = img.alt;
+  console.log(alt);
 
-  img.parentElement.addEventListener('click',()=>{
-   
+  img.parentElement.addEventListener("click", () => {
     fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${alt}`)
-    .then((res)=>{
-      if(res.ok){
-        console.log(res)
-        return res.json()
-      }
-    })
+      .then((res) => {
+        if (res.ok) {
+          console.log(res);
+          return res.json();
+        }
+      })
 
-    .then((data)=>{
-      
-       window.location.href=`albumPage.html?id=${data.data[0].album.id}`
-      
-    })
-    .catch((err)=>{
-      console.log(err)
-    })
-  })
+      .then((data) => {
+        window.location.href = `albumPage.html?id=${data.data[0].album.id}`;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+});
 
-})
-
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-
+// USERNAME/ACCESS LINK
+const userButton = document.querySelector(".user-button");
+const bottomHeader = document.querySelector(".header-cardA");
+const userName = JSON.parse(localStorage.getItem("username"));
+if (userName) {
+  userButton.innerText = userName;
+  bottomHeader.classList.add("d-none !important"); //Non si attiva perchè ha display flex !important
+} else {
+  userButton.innerText = "Sign In";
+}

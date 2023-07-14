@@ -82,7 +82,7 @@ const allImgCards = document.querySelectorAll(".card img");
 allImgCards.forEach((img) => {
   img.addEventListener("click", function () {
     let scomparsa = document.querySelectorAll(".scompari");
-    
+
     scomparsa.forEach((e) => {
       e.classList.add("d-none");
     });
@@ -98,8 +98,10 @@ const populatePlaylist = function () {
   if (playlist) {
     playlist.forEach((track) => {
       const newLi = document.createElement("li");
-      newLi.classList.add("m-2");
-      newLi.innerText = track;
+      newLi.innerText = track.title;
+      newLi.addEventListener("click", function () {
+        window.location.href = `./albumPage.html?id=${track.id}`;
+      });
       document.getElementById("list").appendChild(newLi);
     });
   } else {
