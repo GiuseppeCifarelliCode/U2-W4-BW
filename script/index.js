@@ -146,4 +146,13 @@ const populatePlaylist = function () {
     localStorage.setItem("playlist", JSON.stringify(playlist))
   }
 }
+// si chiude la sezione amici al click
+document.getElementById("close").addEventListener("click", function () {
+  document.getElementById("footer").classList.add("d-lg-none")
+  document.querySelector("main").classList.add("flex-grow-1")
+})
+// mostro la seziona amici al click
+document.getElementById("amici").addEventListener("click", function name() {
+  document.getElementById("footer").classList.remove("d-lg-none")
+})
 populatePlaylist()
