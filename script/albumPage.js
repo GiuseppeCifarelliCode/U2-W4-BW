@@ -143,11 +143,11 @@ const getAlbum = function () {
     })
 }
 getAlbum()
-document
-  .getElementsByClassName("chevron")[0]
-  .addEventListener("click", function () {
-    window.location.href = "./index.html"
-  })
+// document
+//   .getElementsByClassName("chevron")[0]
+//   .addEventListener("click", function () {
+//     window.location.href = "./index.html"
+//   })
 
 const audioPlay = function (n) {
   const allSong = document.querySelectorAll("audio.desktop")
