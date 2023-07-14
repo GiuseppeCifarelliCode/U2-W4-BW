@@ -60,8 +60,8 @@ playbutton.addEventListener("click", () => {
   playbutton.disabled = true
 })
 
-let saveButton = document.querySelector(".save")
-console.log()
+// let saveButton = document.querySelector(".save")
+// console.log()
 
 saveButton.addEventListener("click", () => {
   localStorage.setItem("artista nirvana", "smell like teen spirit")
