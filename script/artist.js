@@ -1,74 +1,69 @@
-const URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
-const barra= new URLSearchParams(location.search);
-const eventId = barra.get("id");
+const URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/"
+const barra = new URLSearchParams(location.search)
+const eventId = barra.get("id")
 
-let id = 412;
-const playerList = [];
-
+let id = 412
+const playerList = []
 
 const ricerca = function () {
-  fetch(URL +eventId)
+  fetch(URL + eventId)
     .then((res) => {
       if (res.ok) {
-        console.log(res);
-        return res.json();
+        console.log(res)
+        return res.json()
       } else {
-        throw new Error("errore");
+        throw new Error("errore")
       }
     })
     .then((data) => {
       console.log(data)
-      console.log(data.tracklist);
-       let fan=document.querySelector('.fan')
-       fan.innerText=`${data.nb_fan
-       }`
-      let nome = document.getElementById("nome");
-      nome.innerText = `${data.name}`;
-      let back=document.getElementById('back')
-      back.style.backgroundImage=`url( ${data.picture_xl} )`
-      back.style.backgroundSize='cover'
-      back.style.height= '500px'
-      back.style.backgroundRepeat='no-repeat'
-      let span1=document.querySelector('.span1')
-      span1.innerText=`${data.name}`
-      let preferiti=document.getElementById('preferiti')
-      let img=document.createElement('img')
-      img.classList.add('rounded-5','mx-2')
+      console.log(data.tracklist)
+      let fan = document.querySelector(".fan")
+      fan.innerText = `${data.nb_fan}`
+      let nome = document.getElementById("nome")
+      nome.innerText = `${data.name}`
+      let back = document.getElementById("back")
+      back.style.backgroundImage = `url( ${data.picture_xl} )`
+      back.style.backgroundSize = "cover"
+      back.style.height = "500px"
+      back.style.backgroundRepeat = "no-repeat"
+      let span1 = document.querySelector(".span1")
+      span1.innerText = `${data.name}`
+      let preferiti = document.getElementById("preferiti")
+      let img = document.createElement("img")
+      img.classList.add("rounded-5", "mx-2")
       img.setAttribute("src", `${data.picture_small}`)
       preferiti.appendChild(img)
-    
-      
-      let x = data.tracklist;
-      console.log(x);
+
+      let x = data.tracklist
+      console.log(x)
       fetch(x)
         .then((res) => {
           if (res.ok) {
-            return res.json();
+            return res.json()
           } else {
-            throw new Error("errore");
+            throw new Error("errore")
           }
         })
         .then((el) => {
-          console.log(el);
+          console.log(el)
           el.data.forEach((el) => {
-            playerList.push(el.preview);
+            playerList.push(el.preview)
 
-            let time = el.duration;
-            const date = data.release_date;
+            let time = el.duration
+            const date = data.release_date
 
-            const minutes = Math.floor(time / 60);
-            const seconds = time - minutes * 60;
-            const hours = Math.floor(time / 3600);
-            time = time - hours * 3600;
+            const minutes = Math.floor(time / 60)
+            const seconds = time - minutes * 60
+            const hours = Math.floor(time / 3600)
+            time = time - hours * 3600
 
-            let brani = document.getElementById("brani");
+            let brani = document.getElementById("brani")
 
-            let col = document.createElement("div");
-            col.classList.add("col", "col-12", "d-flex", "song-row");
+            let col = document.createElement("div")
+            col.classList.add("col", "col-12", "d-flex", "song-row")
             col.innerHTML = `  <div class=" mx-2 d-lg-flex col-1">
-            <img src=${
-              el.album.cover
-            } class="card-img-top" alt="...">   </div>
+            <img src=${el.album.cover} class="card-img-top" alt="...">   </div>
      <div class=" col flex-grow-1">
        <p class="m-0 text-truncate">${el.title}</p>
        <p class="m-0">${el.artist.name}</p>
@@ -80,13 +75,10 @@ const ricerca = function () {
        <p class="mt-0">${el.rank}</p>
        <p class="mt-0">${minutes}:${seconds}</p>
      </div>
-     `;
+     `
 
-            brani.appendChild(col);
-
-          
-
-          });
+            brani.appendChild(col)
+          })
 
           let songRow = document.getElementsByClassName("song-row")
           for (let i = 0; i < songRow.length; i++) {
@@ -108,32 +100,31 @@ const ricerca = function () {
             sMP3.type = "audio/mp3"
             aTag.classList.remove("d-none")
             document.getElementById("player").appendChild(aTag)
-    
+
             songRow[i].addEventListener("click", function () {
               audioPlay(i)
             })
           }
 
-          document.getElementById("home").addEventListener("click", function () {
-            window.location.href = ' ./index.html'
-          })
+          document
+            .getElementById("home")
+            .addEventListener("click", function () {
+              window.location.href = " ./index.html"
+            })
 
-
-          document.getElementById("cerca").addEventListener("click", function () {
-            window.location.href = ' ./search.html'
-          })
-
-          
-
-          
-        });
+          document
+            .getElementById("cerca")
+            .addEventListener("click", function () {
+              window.location.href = " ./search.html"
+            })
+        })
     })
     .catch((err) => {
-      console.log(err);
-    });
-};
+      console.log(err)
+    })
+}
 
-ricerca();
+ricerca()
 
 const audioPlay = function (n) {
   const allSong = document.querySelectorAll("audio")
@@ -152,15 +143,27 @@ const audioPlay = function (n) {
   })
 }
 
-
-
-
-
-
 document.getElementById("close").addEventListener("click", function () {
-  document.getElementById("footer").classList.add("d-lg-none");
-  document.querySelector("main").classList.add("flex-grow-1");
-});
+  document.getElementById("footer").classList.add("d-lg-none")
+  document.querySelector("main").classList.add("flex-grow-1")
+})
 document.getElementById("amici").addEventListener("click", function name() {
-  document.getElementById("footer").classList.remove("d-lg-none");
-});
+  document.getElementById("footer").classList.remove("d-lg-none")
+})
+const populatePlaylist = function () {
+  const playlist = JSON.parse(localStorage.getItem("playlist"))
+  if (playlist) {
+    playlist.forEach((track) => {
+      const newLi = document.createElement("li")
+      newLi.innerText = track.title
+      newLi.addEventListener("click", function () {
+        window.location.href = `./albumPage.html?id=${track.id}`
+      })
+      document.getElementById("list").appendChild(newLi)
+    })
+  } else {
+    const playlist = []
+    localStorage.setItem("playlist", JSON.stringify(playlist))
+  }
+}
+populatePlaylist()
